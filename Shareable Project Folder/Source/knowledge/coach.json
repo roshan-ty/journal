@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "principles": [
+    {"id":"expectancy","title":"Expectancy","keywords":["expectancy","edge","average"],"text":"Expectancy is net P&L divided by closed trades. It includes recorded fees. A positive sample average is not a forecast; compare different periods and avoid changing a strategy after only a few trades."},
+    {"id":"risk","title":"Risk and R multiples","keywords":["risk","loss","drawdown","stop"],"text":"Record the risk you planned before entry. R multiple equals net realized P&L divided by initial risk. Keep that denominator unchanged after the trade. Missing initial risk means R is unavailable, not zero."},
+    {"id":"consistency","title":"Consistency rules","keywords":["consistency","rule","funded","challenge"],"text":"A common consistency measure is best profitable day divided by total net profit. The actual provider’s rule, trading-day boundary, fees and payout cycle control compliance. Use the provider’s current dashboard as the authority; incomplete imports can distort calculated progress."},
+    {"id":"process","title":"Daily review","keywords":["review","plan","improve","discipline","psychology"],"text":"Before the session, write the setup, invalidation and planned risk. After the session, annotate decisions and distinguish execution mistakes from valid losses. Compare trades with the same setup and context. Use a repeatable checklist."},
+    {"id":"data","title":"Data quality","keywords":["data","sync","import","missing"],"text":"Check fees, timestamps, account currency, partial fills and duplicate imports before interpreting analytics. Unrealized P&L needs a timestamped provider mark or market price. Closed-trade history cannot reconstruct tick data or intratrade drawdown."}
+  ]
+}

@@ -1,0 +1,2191 @@
+@font-face{font-family:Satoshi;src:url('./assets/fonts/Satoshi-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Satoshi;src:url('./assets/fonts/Satoshi-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:Satoshi;src:url('./assets/fonts/Satoshi-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+.ty-journal {
+  font-family: Satoshi, "Segoe UI", Arial, sans-serif;
+  color-scheme: dark;
+  --bg: #0f0f0f;
+  --sidebar: #171717;
+  --surface: #171717;
+  --surface-2: #212121;
+  --text: #f5f5f5;
+  --muted: #a3a3a3;
+  --faint: #969696;
+  --line: #2b2b2b;
+  --accent: #4250eb;
+  --accent-ink: #ffffff;
+  --positive: #4cc69b;
+  --negative: #f27070;
+  --purple: #999ff7;
+  --hover: #262626;
+  --green-bg: #153529;
+  --red-bg: #391e1e;
+  --shadow: 0 12px 50px #0003;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+.ty-journal[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --sidebar: #fff;
+  --surface: #fff;
+  --surface-2: #f6f7fb;
+  --text: #171717;
+  --muted: #626673;
+  --faint: #686d79;
+  --line: #e4e6ee;
+  --accent: #4250eb;
+  --positive: #18835c;
+  --negative: #ca3535;
+  --purple: #606ce8;
+  --hover: #eceefd;
+  --green-bg: #e8f7f0;
+  --red-bg: #fff0f0;
+  --shadow: 0 12px 50px #23331a0c;
+}
+.ty-journal * {
+  box-sizing: border-box;
+}
+.ty-journal {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+}
+.ty-journal .data-caption {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: -8px 0 20px;
+}
+.ty-journal button,
+.ty-journal input,
+.ty-journal select,
+.ty-journal textarea {
+  font: inherit;
+}
+/* Windows native select popups do not reliably inherit a transparent select's surface. */
+.ty-journal select,
+.ty-journal option,
+.ty-journal optgroup {
+  color-scheme: inherit;
+  background-color: var(--surface-2);
+  color: var(--text);
+}
+.ty-journal option:disabled { color: var(--muted); }
+.ty-journal input:disabled,
+.ty-journal select:disabled,
+.ty-journal textarea:disabled { color: var(--muted); opacity: 1; cursor: not-allowed; }
+.ty-journal { accent-color: var(--accent); scrollbar-color: var(--faint) var(--surface); }
+.ty-journal button {
+  cursor: pointer;
+  color: inherit;
+}
+.ty-journal button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.ty-journal button,
+.ty-journal select,
+.ty-journal input,
+.ty-journal textarea,
+.ty-journal a {
+  outline-offset: 4px;
+}
+.ty-journal button:focus-visible,
+.ty-journal input:focus-visible,
+.ty-journal select:focus-visible,
+.ty-journal textarea:focus-visible {
+  outline: 2px solid var(--accent);
+}
+.ty-journal button {
+  background: none;
+  border: 0;
+}
+.ty-journal input,
+.ty-journal select,
+.ty-journal textarea {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 10px 12px;
+  color: var(--text);
+  min-width: 0;
+}
+.ty-journal textarea {
+  resize: vertical;
+  line-height: 1.7;
+}
+.ty-journal input::placeholder,
+.ty-journal textarea::placeholder {
+  color: var(--faint);
+}
+.ty-journal h1,
+.ty-journal h2,
+.ty-journal h3,
+.ty-journal p {
+  margin: 0;
+}
+.ty-journal h2 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.25px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.ty-journal h3 {
+  font-size: 17px;
+  font-weight: 550;
+}
+.ty-journal p {
+  line-height: 1.65;
+}
+.ty-journal small {
+  font-size: 11px;
+}
+.ty-journal .subtle,
+.ty-journal .muted {
+  color: var(--muted);
+}
+.ty-journal .positive {
+  color: var(--positive) !important;
+}
+.ty-journal .negative {
+  color: var(--negative) !important;
+}
+.ty-journal .micro {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.ty-journal .row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ty-journal .wrap {
+  flex-wrap: wrap;
+}
+.ty-journal .block {
+  display: block;
+}
+.ty-journal .mono {
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 11px;
+}
+.ty-journal .padded {
+  padding: 20px 24px;
+}
+.ty-journal .button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 10px 15px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-weight: 500;
+  min-height: 38px;
+}
+.ty-journal .button:hover {
+  background: var(--hover);
+}
+.ty-journal .button.primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  font-weight: 650;
+}
+.ty-journal .button.primary:hover {
+  filter: brightness(0.94);
+}
+.ty-journal .button.small {
+  padding: 7px 11px;
+  min-height: 32px;
+  font-size: 12px;
+}
+.ty-journal .button.full {
+  width: 100%;
+}
+.ty-journal .text-button {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 5px 0;
+}
+.ty-journal .text-button:hover {
+  color: var(--text);
+}
+.ty-journal .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.ty-journal .icon:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+.ty-journal .badge {
+  padding: 4px 7px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 10px;
+  white-space: nowrap;
+  font-weight: 550;
+}
+.ty-journal .badge.lime {
+  background: var(--green-bg);
+  color: var(--positive);
+  border-color: transparent;
+}
+.ty-journal .badge.red {
+  background: var(--red-bg);
+  color: var(--negative);
+  border-color: transparent;
+}
+.ty-journal .badge.purple {
+  background: #a58ee817;
+  color: var(--purple);
+  border-color: transparent;
+}
+.ty-journal .dot-sep {
+  color: var(--faint);
+  padding: 0 7px;
+}
+.ty-journal {
+  display: flex;
+  min-height: 100vh;
+}
+.ty-journal .sidebar {
+  width: 224px;
+  flex-shrink: 0;
+  background: var(--sidebar);
+  border-right: 1px solid var(--line);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 27px 15px 12px;
+  z-index: 10;
+  overflow-y: auto;
+}
+.ty-journal .brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-align: left;
+  padding: 0 10px 32px;
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -0.5px;
+}
+.ty-journal .brand img {
+  width: 37px;
+  height: 43px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 0 4px #ffffff55);
+}
+.ty-journal .brand small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3.4px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 3px;
+}
+.ty-journal .workspace-label {
+  padding: 0 12px 18px;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  color: var(--faint);
+  display: flex;
+  justify-content: space-between;
+}
+.ty-journal .workspace-label span {
+  letter-spacing: 0;
+  font-family: monospace;
+}
+.ty-journal .nav-item {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 7px;
+  text-align: left;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+.ty-journal .nav-item:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+.ty-journal .nav-item.active {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 650;
+}
+.ty-journal .nav-section {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--faint);
+  padding: 25px 12px 12px;
+}
+.ty-journal .sidebar-bottom {
+  margin-top: auto;
+  padding-top: 25px;
+}
+.ty-journal .profile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding: 16px 8px 0;
+  font-size: 11px;
+}
+.ty-journal .profile small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  margin-top: 4px;
+}
+.ty-journal .profile .icon {
+  margin-left: auto;
+}
+.ty-journal .avatar {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  background: #eceefd;
+  color: #4250eb;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+}
+.ty-journal main {
+  margin-left: 224px;
+  width: calc(100% - 224px);
+  min-width: 0;
+}
+.ty-journal .topbar {
+  height: 64px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: var(--bg);
+}
+.ty-journal .breadcrumb {
+  font-size: 11px;
+  color: var(--muted);
+}
+.ty-journal .breadcrumb span {
+  padding: 0 12px;
+  color: var(--faint);
+}
+.ty-journal .breadcrumb b {
+  color: var(--text);
+  font-weight: 500;
+}
+.ty-journal .top-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+}
+.ty-journal .divider {
+  width: 1px;
+  height: 17px;
+  background: var(--line);
+  margin: 0 8px;
+}
+.ty-journal .status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--positive);
+}
+.ty-journal .page {
+  padding: 30px 32px 0;
+  max-width: 1750px;
+  margin: auto;
+}
+.ty-journal .page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 27px;
+  gap: 20px;
+}
+.ty-journal .eyebrow {
+  color: var(--faint);
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  font-weight: 650;
+  margin-bottom: 9px;
+}
+.ty-journal h1 {
+  font-size: 29px;
+  letter-spacing: -1px;
+  line-height: 1.3;
+  font-weight: 550;
+}
+.ty-journal .page-heading p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 7px;
+}
+.ty-journal .heading-actions {
+  display: flex;
+  gap: 9px;
+}
+.ty-journal .filterbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.ty-journal .select-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding-left: 12px;
+  gap: 6px;
+  color: var(--muted);
+}
+.ty-journal .select-wrap select {
+  background: var(--surface);
+  border: 0;
+  font-size: 11px;
+  max-width: 275px;
+  padding: 10px 8px;
+  color: var(--text);
+}
+.ty-journal .date-range {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 0 10px;
+  color: var(--muted);
+}
+.ty-journal .date-range input {
+  width: 119px;
+  border: 0;
+  background: none;
+  font-size: 10px;
+  padding: 10px 0;
+  color: var(--muted);
+}
+.ty-journal .filterbar .subtle {
+  font-size: 10px;
+  white-space: nowrap;
+}
+.ty-journal .filter-spacer {
+  flex: 1;
+}
+.ty-journal .extra-filters {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 17px;
+}
+.ty-journal .extra-filters label {
+  flex: 1;
+}
+.ty-journal .extra-filters input,
+.ty-journal .extra-filters select {
+  width: 100%;
+}
+.ty-journal .mini-dot {
+  width: 4px;
+  height: 4px;
+  background: #c6b77b;
+  border-radius: 50%;
+}
+.ty-journal .metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.ty-journal .metric {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 19px 20px 15px;
+  min-height: 130px;
+}
+.ty-journal .metric-label {
+  color: var(--muted);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.ty-journal .metric-label svg {
+  color: var(--faint);
+}
+.ty-journal .metric-value {
+  font-size: 28px;
+  letter-spacing: -1px;
+  font-weight: 550;
+  margin-top: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.ty-journal .metric-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 9px;
+  margin-top: 10px;
+  min-height: 22px;
+}
+.ty-journal .mini-trend {
+  color: var(--positive);
+}
+.ty-journal .mini-ring {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent) var(--progress), var(--line) 0);
+  position: relative;
+}
+.ty-journal .mini-ring:after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: var(--surface);
+  border-radius: 50%;
+}
+.ty-journal .mini-bars {
+  display: flex;
+  gap: 3px;
+  align-items: end;
+  height: 23px;
+}
+.ty-journal .mini-bars i {
+  width: 4px;
+  background: var(--accent);
+  border-radius: 1px;
+  height: 7px;
+}
+.ty-journal .mini-bars i:nth-child(2) {
+  height: 13px;
+}
+.ty-journal .mini-bars i:nth-child(3) {
+  height: 10px;
+}
+.ty-journal .mini-bars i:nth-child(4) {
+  height: 19px;
+}
+.ty-journal .mini-bars i:nth-child(5) {
+  height: 23px;
+}
+.ty-journal .panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.ty-journal .panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 21px 23px 17px;
+  gap: 15px;
+}
+.ty-journal .panel-head p {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 6px;
+}
+.ty-journal .dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 20px;
+}
+.ty-journal .dashboard-grid > .panel {
+  margin-bottom: 0;
+}
+.ty-journal .dashboard-grid {
+  margin-bottom: 20px;
+}
+.ty-journal .equity-panel {
+  min-width: 0;
+}
+.ty-journal .segmented {
+  display: flex;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 3px;
+  gap: 2px;
+}
+.ty-journal .segmented button {
+  padding: 6px 9px;
+  color: var(--muted);
+  font-size: 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.ty-journal .segmented button.active {
+  background: var(--surface-2);
+  color: var(--text);
+  box-shadow: 0 1px 4px #0001;
+}
+.ty-journal .chart-head {
+  padding: 0 24px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ty-journal .chart-head strong {
+  font-size: 26px;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+.ty-journal .chart-head > span {
+  font-size: 9px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ty-journal .legend-dot,
+.ty-journal .green-dot,
+.ty-journal .red-dot,
+.ty-journal .gray-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.ty-journal .red-dot {
+  background: var(--negative);
+}
+.ty-journal .gray-dot {
+  background: var(--muted);
+}
+.ty-journal .equity-panel > .recharts-responsive-container {
+  padding: 0 17px 9px;
+}
+.ty-journal .snapshot .panel-head {
+  padding-bottom: 10px;
+}
+.ty-journal .snapshot .panel-head > svg {
+  color: var(--muted);
+}
+.ty-journal .win-donut {
+  width: 149px;
+  height: 149px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 215deg,
+    var(--accent) var(--progress),
+    #bc76734f 0
+  );
+  margin: 5px auto 15px;
+  padding: 11px;
+  transform: rotate(0deg);
+}
+.ty-journal .win-donut > div {
+  border: 6px solid var(--surface);
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ty-journal .win-donut small {
+  font-size: 8px;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+}
+.ty-journal .win-donut strong {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin-top: 5px;
+}
+.ty-journal .win-donut em {
+  font-size: 16px;
+  font-style: normal;
+  margin-left: 2px;
+}
+.ty-journal .win-donut span {
+  font-size: 8px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.ty-journal .legend-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 9px;
+  color: var(--muted);
+  padding-bottom: 13px;
+}
+.ty-journal .legend-row span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ty-journal .legend-row b {
+  color: var(--text);
+  font-weight: 500;
+}
+.ty-journal .snapshot-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 23px;
+  border-top: 1px solid var(--line);
+  padding: 10px 0;
+  font-size: 10px;
+  color: var(--muted);
+}
+.ty-journal .snapshot-row b {
+  font-size: 11px;
+  color: var(--text);
+  font-weight: 550;
+}
+.ty-journal .calendar-panel .panel-head {
+  padding-bottom: 18px;
+}
+.ty-journal .month-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ty-journal .month-control button {
+  display: flex;
+  color: var(--muted);
+  padding: 3px;
+}
+.ty-journal .month-control b {
+  font-weight: 500;
+  font-size: 10px;
+  min-width: 96px;
+  text-align: center;
+}
+.ty-journal .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+  padding: 0 22px;
+}
+.ty-journal .week-label {
+  font-size: 8px;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: var(--faint);
+  padding: 3px 0 9px;
+}
+.ty-journal .calendar-day {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  min-height: 66px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  padding: 7px 8px;
+  gap: 4px;
+  position: relative;
+}
+.ty-journal .calendar-day span {
+  font-size: 9px;
+  color: var(--muted);
+}
+.ty-journal .calendar-day b {
+  font-size: 10px;
+  font-weight: 550;
+  margin-top: 2px;
+}
+.ty-journal .calendar-day small {
+  font-size: 8px;
+  color: var(--muted);
+}
+.ty-journal .calendar-day.profit-day {
+  background: var(--green-bg);
+  border-color: #72915822;
+}
+.ty-journal .calendar-day.loss-day {
+  background: var(--red-bg);
+  border-color: #a7666622;
+}
+.ty-journal .calendar-day.profit-day b {
+  color: var(--positive);
+}
+.ty-journal .calendar-day.loss-day b {
+  color: var(--negative);
+}
+.ty-journal .calendar-day.outside {
+  background: none;
+  border-color: transparent;
+}
+.ty-journal .calendar-day:hover {
+  border-color: var(--faint);
+}
+.ty-journal .calendar-day.selected-day {
+  outline: 1px solid var(--accent);
+}
+.ty-journal .no-trades {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+}
+.ty-journal .calendar-legend {
+  display: flex;
+  gap: 17px;
+  font-size: 8px;
+  color: var(--muted);
+  padding: 16px 23px 20px;
+}
+.ty-journal .calendar-legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ty-journal .calendar-legend span:last-child {
+  margin-left: auto;
+}
+.ty-journal .coach-preview {
+  padding: 0 23px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 28%, #c0e7980a, transparent 70%),
+    var(--surface);
+}
+.ty-journal .coach-preview .panel-head {
+  padding: 22px 0;
+  width: 100%;
+}
+.ty-journal .coach-preview h2 {
+  font-size: 13px;
+}
+.ty-journal .coach-preview .badge {
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+.ty-journal .coach-orb {
+  background: radial-gradient(circle at 35% 25%, #d8edbe25, #4250eb09);
+  border: 1px solid #4250eb33;
+  box-shadow: 0 0 35px #4250eb0c;
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 18px;
+  color: var(--accent);
+  margin: 20px auto 23px;
+  transform: rotate(-5deg);
+}
+.ty-journal .coach-preview h3 {
+  font-size: 21px;
+  font-weight: 450;
+  letter-spacing: -0.6px;
+  line-height: 1.35;
+}
+.ty-journal .coach-preview > p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 15px 0 25px;
+  line-height: 1.9;
+  max-width: 255px;
+}
+.ty-journal .coach-preview .button {
+  margin-top: auto;
+  font-size: 11px;
+  justify-content: space-between;
+}
+.ty-journal .coach-disclosure {
+  text-align: center;
+  font-size: 8px;
+  color: var(--faint);
+  margin-top: 11px;
+  line-height: 1.7;
+}
+.ty-journal .table-scroll {
+  overflow-x: auto;
+}
+.ty-journal table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+.ty-journal th {
+  text-align: left;
+  background: var(--surface-2);
+  padding: 12px 19px;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.ty-journal td {
+  padding: 14px 19px;
+  font-size: 10px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+}
+.ty-journal td b {
+  font-weight: 550;
+  color: var(--text);
+}
+.ty-journal td.positive b,
+.ty-journal td.negative b {
+  color: inherit;
+}
+.ty-journal tbody tr:last-child td {
+  border-bottom: 0;
+}
+.ty-journal tbody tr[tabindex] {
+  cursor: pointer;
+}
+.ty-journal tbody tr[tabindex]:hover {
+  background: var(--hover);
+}
+.ty-journal .instrument {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.ty-journal .instrument > span {
+  width: 27px;
+  height: 27px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  font-size: 8px;
+  color: var(--muted);
+}
+.ty-journal .instrument b {
+  font-size: 11px;
+}
+.ty-journal .reviewed {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 9px;
+}
+.ty-journal .pending {
+  color: var(--faint);
+  font-size: 9px;
+}
+.ty-journal .count {
+  font-size: 9px;
+  color: var(--muted);
+  background: var(--surface-2);
+  padding: 3px 6px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+.ty-journal .table-foot {
+  padding: 17px 22px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.ty-journal footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0 23px;
+  font-size: 9px;
+  color: var(--faint);
+}
+.ty-journal .empty {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 35px;
+  gap: 12px;
+  color: var(--faint);
+}
+.ty-journal .empty h3 {
+  color: var(--text);
+  font-size: 17px;
+}
+.ty-journal .empty p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 500px;
+}
+.ty-journal .empty .button {
+  margin-top: 10px;
+}
+.ty-journal .overlay {
+  position: fixed;
+  inset: 0;
+  background: #0009;
+  backdrop-filter: blur(5px);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.ty-journal .modal {
+  width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  padding: 24px;
+}
+.ty-journal .modal.wide {
+  width: 760px;
+}
+.ty-journal .modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.ty-journal .modal-head h2 {
+  font-size: 19px;
+}
+.ty-journal .form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+}
+.ty-journal label {
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ty-journal .field {
+  margin-top: 17px;
+}
+.ty-journal .modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 23px;
+}
+.ty-journal .modal-actions > .subtle {
+  margin-right: auto;
+  font-size: 11px;
+}
+.ty-journal .checkbox-label {
+  flex-direction: row;
+  align-items: center;
+}
+.ty-journal .checkbox-label input {
+  accent-color: var(--accent);
+}
+.ty-journal .notice {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 12px 15px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 10px 0 20px;
+}
+.ty-journal .form-error,
+.ty-journal .error-banner {
+  color: var(--negative);
+  font-size: 12px;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+.ty-journal .error-banner {
+  background: var(--red-bg);
+  padding: 15px 30px;
+  margin: 0;
+}
+.ty-journal .upload-zone {
+  margin: 20px 0;
+  border: 1px dashed var(--faint);
+  background: var(--bg);
+  border-radius: 9px;
+  padding: 30px;
+  text-align: center;
+  align-items: center;
+  line-height: 1.6;
+}
+.ty-journal .upload-zone b {
+  font-size: 15px;
+  color: var(--text);
+}
+.ty-journal .upload-zone input {
+  font-size: 10px;
+  margin-top: 10px;
+}
+.ty-journal .attachments {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.ty-journal .attachments img {
+  width: 130px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.ty-journal .attachments > div {
+  display: flex;
+  flex-direction: column;
+}
+.ty-journal .connect-callout {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 22px;
+  background: var(--surface);
+}
+.ty-journal .connect-callout p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+  max-width: 620px;
+}
+.ty-journal .connection-logo {
+  width: 47px;
+  height: 47px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  border-radius: 9px;
+}
+.ty-journal .connection-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 0 3px #ffffff55);
+}
+.ty-journal .accounts-grid,
+.ty-journal .strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.ty-journal .account-card .panel-head {
+  padding-bottom: 10px;
+  color: var(--muted);
+}
+.ty-journal .account-body {
+  padding: 8px 23px 22px;
+}
+.ty-journal .account-body > p {
+  margin-top: 7px;
+  color: var(--muted);
+}
+.ty-journal .account-balance {
+  margin: 24px 0;
+}
+.ty-journal .account-balance small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-bottom: 7px;
+}
+.ty-journal .account-balance strong {
+  font-size: 27px;
+  font-weight: 500;
+}
+.ty-journal .account-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.ty-journal .account-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 10px;
+}
+.ty-journal .account-stats span {
+  color: var(--muted);
+}
+.ty-journal .account-stats b {
+  font-weight: 500;
+}
+.ty-journal .rule {
+  margin: 16px 0;
+}
+.ty-journal .rule > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+  margin-bottom: 8px;
+}
+.ty-journal .rule span {
+  color: var(--muted);
+}
+.ty-journal .rule b {
+  font-weight: 500;
+}
+.ty-journal .progress-track {
+  background: var(--line);
+  height: 4px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.ty-journal .progress-track span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+.ty-journal .account-body .micro {
+  padding-top: 12px;
+}
+.ty-journal details {
+  margin-top: 15px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.ty-journal pre {
+  white-space: pre-wrap;
+  font-size: 10px;
+  overflow: auto;
+  max-height: 220px;
+}
+.ty-journal .notebook-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  min-height: 540px;
+}
+.ty-journal .note-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 20px 23px;
+  text-align: left;
+  width: 100%;
+  border-top: 1px solid var(--line);
+}
+.ty-journal .note-list-item.selected,
+.ty-journal .note-list-item:hover {
+  background: var(--hover);
+}
+.ty-journal .note-list-item small {
+  color: var(--faint);
+  font-size: 9px;
+}
+.ty-journal .note-list-item b {
+  font-size: 12px;
+  font-weight: 500;
+}
+.ty-journal .note-list-item span {
+  font-size: 10px;
+  color: var(--muted);
+  white-space: pre-line;
+  line-height: 1.5;
+}
+.ty-journal .template-list {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.ty-journal .note-editor {
+  padding: 0 25px 25px;
+}
+.ty-journal .note-editor .panel-head {
+  padding-left: 0;
+  padding-right: 0;
+}
+.ty-journal .note-title {
+  font-size: 25px;
+  font-weight: 500;
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 10px 0;
+}
+.ty-journal .note-date {
+  display: block;
+  margin: 12px 0 20px;
+  font-size: 11px;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+.ty-journal .note-editor textarea {
+  background: none;
+  width: 100%;
+  border: 0;
+  min-height: 360px;
+  padding: 0;
+  font-size: 13px;
+  line-height: 2;
+}
+.ty-journal .section-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.ty-journal .strategy-card {
+  padding: 0 23px 23px;
+}
+.ty-journal .strategy-card > .panel-head {
+  padding: 22px 0;
+}
+.ty-journal .strategy-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background: var(--surface-2);
+  display: grid;
+  place-items: center;
+}
+.ty-journal .strategy-card > p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 12px 0 23px;
+  min-height: 37px;
+}
+.ty-journal .strategy-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 11px;
+  color: var(--muted);
+  min-height: 125px;
+}
+.ty-journal .strategy-rules div {
+  display: flex;
+  gap: 12px;
+  line-height: 1.6;
+}
+.ty-journal .strategy-rules span {
+  font-family: monospace;
+  font-size: 10px;
+  color: var(--faint);
+}
+.ty-journal .strategy-results {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+.ty-journal .strategy-results div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.ty-journal .strategy-results small {
+  font-size: 8px;
+  letter-spacing: 0.7px;
+  color: var(--muted);
+}
+.ty-journal .strategy-results b {
+  font-size: 17px;
+  font-weight: 500;
+}
+.ty-journal .progress-panel {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 25px;
+}
+.ty-journal .habit-summary {
+  padding: 20px 30px 35px;
+}
+.ty-journal .habit-summary strong {
+  font-size: 43px;
+  font-weight: 450;
+  letter-spacing: -2px;
+}
+.ty-journal .habit-summary strong span {
+  color: var(--faint);
+  font-size: 25px;
+}
+.ty-journal .habit-summary p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 5px 0 20px;
+}
+.ty-journal .habit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+  padding: 22px 26px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  cursor: pointer;
+}
+.ty-journal .habit input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+.ty-journal .habit svg {
+  margin-left: auto;
+  color: var(--faint);
+}
+.ty-journal .habit.done {
+  color: var(--positive);
+}
+.ty-journal .habit.done svg {
+  color: var(--positive);
+}
+.ty-journal .add-habit {
+  display: flex;
+  gap: 10px;
+  padding: 22px 26px 0;
+}
+.ty-journal .add-habit input {
+  flex: 1;
+}
+.ty-journal .coach-page {
+  max-width: 980px;
+  margin: auto;
+}
+.ty-journal .small-orb {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  margin: 0;
+}
+.ty-journal .coach-conversation {
+  min-height: 400px;
+  max-height: 620px;
+  overflow: auto;
+  padding: 20px 35px;
+}
+.ty-journal .coach-welcome {
+  text-align: center;
+  max-width: 630px;
+  margin: 30px auto;
+  color: var(--accent);
+}
+.ty-journal .coach-welcome h2 {
+  display: block;
+  font-size: 25px;
+  color: var(--text);
+  margin: 20px 0 12px;
+}
+.ty-journal .coach-welcome p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+.ty-journal .prompt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 27px;
+}
+.ty-journal .prompt-grid button {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.ty-journal .prompt-grid button:hover {
+  background: var(--hover);
+}
+.ty-journal .coach-composer {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px;
+  margin: 15px 30px;
+  gap: 10px;
+  background: var(--surface-2);
+}
+.ty-journal .coach-composer input {
+  flex: 1;
+  background: none;
+  border: 0;
+  font-size: 12px;
+}
+.ty-journal .coach-page > .coach-disclosure {
+  padding-bottom: 20px;
+}
+.ty-journal .user-message {
+  margin-left: auto;
+  max-width: 80%;
+  width: fit-content;
+  background: var(--surface-2);
+  padding: 13px 17px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.ty-journal .coach-message {
+  margin: 20px 0 28px;
+  padding: 22px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.ty-journal .coach-message .row {
+  color: var(--positive);
+  font-size: 12px;
+}
+.ty-journal .coach-message p {
+  white-space: pre-line;
+  margin: 16px 0;
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+.ty-journal .coach-fact {
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  font-size: 10px;
+  margin-top: 17px;
+  border-radius: 5px;
+}
+.ty-journal .settings-panel {
+  padding: 0 27px 30px;
+  max-width: 900px;
+  margin: auto;
+}
+.ty-journal .settings-panel .panel-head {
+  padding-left: 0;
+  padding-right: 0;
+}
+.ty-journal .settings-panel .micro {
+  margin: 12px 0;
+}
+.ty-journal .settings-panel form > .button {
+  margin-top: 20px;
+}
+.ty-journal .settings-panel > p {
+  margin: 10px 0 18px;
+}
+.ty-journal .hidden-input {
+  display: none;
+}
+.ty-journal hr {
+  height: 1px;
+  border: 0;
+  background: var(--line);
+  margin: 30px 0;
+}
+.ty-journal .replay-meta {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 13px 25px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+}
+.ty-journal .replay-meta > span:nth-child(3) {
+  margin-left: auto;
+  color: var(--muted);
+}
+.ty-journal .candles {
+  width: 100%;
+  max-height: 430px;
+  padding: 10px 15px;
+}
+.ty-journal .replay-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 25px;
+  border-top: 1px solid var(--line);
+}
+.ty-journal .replay-controls .subtle {
+  margin-left: auto;
+  font-size: 10px;
+}
+.ty-journal .simulation-form {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 25px 22px;
+}
+.ty-journal .simulation-form label {
+  flex: 1;
+  min-width: 80px;
+  max-width: 150px;
+}
+.ty-journal .simulation-form input {
+  width: 100%;
+}
+.ty-journal .toast {
+  position: fixed;
+  bottom: 25px;
+  left: calc(50% + 112px);
+  transform: translateX(-50%);
+  z-index: 60;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 9px;
+  box-shadow: var(--shadow);
+  padding: 14px 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 650px;
+}
+.ty-journal .loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.ty-journal .spin {
+  animation: ty-journal-spin 1s linear infinite;
+}
+@keyframes ty-journal-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (min-width: 1500px) {
+  .ty-journal .page {
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+  .ty-journal .dashboard-grid {
+    grid-template-columns: minmax(0, 1fr) 355px;
+  }
+  .ty-journal .calendar-day {
+    min-height: 78px;
+  }
+  .ty-journal .metric {
+    padding: 22px 25px;
+  }
+  .ty-journal .metric-value {
+    font-size: 32px;
+  }
+  .ty-journal .calendar-day b {
+    font-size: 12px;
+  }
+  .ty-journal .calendar-day small {
+    font-size: 9px;
+  }
+}
+@media (max-width: 1220px) {
+  .ty-journal .sidebar {
+    width: 195px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .ty-journal .brand {
+    font-size: 16px;
+  }
+  .ty-journal .brand img {
+    width: 30px;
+  }
+  .ty-journal .nav-item {
+    font-size: 11px;
+    gap: 9px;
+  }
+  .ty-journal main {
+    margin-left: 195px;
+    width: calc(100% - 195px);
+  }
+  .ty-journal .page {
+    padding: 24px 20px 0;
+  }
+  .ty-journal .topbar {
+    padding: 0 20px;
+  }
+  .ty-journal .dashboard-grid {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+  .ty-journal .metric {
+    padding: 16px 14px;
+  }
+  .ty-journal .metric-value {
+    font-size: 24px;
+  }
+  .ty-journal .metric-bottom {
+    font-size: 8px;
+  }
+  .ty-journal .filterbar .subtle {
+    display: none;
+  }
+  .ty-journal .date-range input {
+    width: 110px;
+  }
+  .ty-journal .panel-head {
+    padding: 18px;
+  }
+  .ty-journal .calendar-grid {
+    padding: 0 14px;
+    gap: 4px;
+  }
+  .ty-journal .calendar-day {
+    padding: 6px;
+    min-height: 64px;
+  }
+  .ty-journal .calendar-day b {
+    font-size: 9px;
+  }
+  .ty-journal .calendar-day small {
+    font-size: 7px;
+  }
+  .ty-journal .calendar-legend {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 7px;
+  }
+  .ty-journal .coach-preview {
+    padding: 0 18px 18px;
+  }
+  .ty-journal .accounts-grid,
+  .ty-journal .strategy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ty-journal .connect-callout {
+    flex-wrap: wrap;
+  }
+  .ty-journal .top-actions .subtle {
+    display: none;
+  }
+  .ty-journal .toast {
+    left: calc(50% + 97px);
+  }
+}
+@media (max-width: 1000px) {
+  .ty-journal .sidebar {
+    width: 180px;
+  }
+  .ty-journal .sidebar .brand {
+    padding-left: 5px;
+    gap: 6px;
+    font-size: 15px;
+  }
+  .ty-journal .sidebar .brand small {
+    font-size: 8px;
+  }
+  .ty-journal .nav-item {
+    padding: 10px 8px;
+    font-size: 10px;
+  }
+  .ty-journal .nav-item svg {
+    width: 16px;
+  }
+  .ty-journal main {
+    margin-left: 180px;
+    width: calc(100% - 180px);
+  }
+  .ty-journal .page-heading {
+    flex-wrap: wrap;
+  }
+  .ty-journal h1 {
+    font-size: 26px;
+  }
+  .ty-journal .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ty-journal .dashboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ty-journal .dashboard-grid .snapshot {
+    display: none;
+  }
+  .ty-journal .coach-preview {
+    display: none;
+  }
+  .ty-journal .filterbar {
+    flex-wrap: wrap;
+  }
+  .ty-journal .date-range {
+    flex: 1;
+  }
+  .ty-journal .filter-spacer {
+    display: none;
+  }
+  .ty-journal .notebook-layout {
+    grid-template-columns: 220px 1fr;
+  }
+  .ty-journal .extra-filters {
+    flex-wrap: wrap;
+  }
+  .ty-journal .extra-filters label {
+    min-width: 130px;
+  }
+  .ty-journal .accounts-grid,
+  .ty-journal .strategy-grid {
+    grid-template-columns: 1fr;
+  }
+  .ty-journal .toast {
+    left: calc(50% + 90px);
+  }
+}
+@media (max-width: 720px) {
+  .ty-journal .sidebar {
+    width: 61px;
+    padding: 15px 6px;
+  }
+  .ty-journal .brand {
+    padding: 0 5px 25px !important;
+  }
+  .ty-journal .brand img {
+    width: 32px;
+  }
+  .ty-journal .nav-item {
+    font-size: 0;
+    justify-content: center;
+    padding: 13px 5px;
+  }
+  .ty-journal .nav-item svg {
+    width: 20px;
+    height: 20px;
+  }
+  .ty-journal main {
+    margin-left: 61px;
+    width: calc(100% - 61px);
+  }
+  .ty-journal .page {
+    padding: 20px 13px 0;
+  }
+  .ty-journal .topbar {
+    padding: 0 13px;
+  }
+  .ty-journal .breadcrumb {
+    font-size: 10px;
+  }
+  .ty-journal .top-actions .divider,
+  .ty-journal .top-actions .status-dot {
+    display: none;
+  }
+  .ty-journal .top-actions {
+    gap: 2px;
+  }
+  .ty-journal .heading-actions {
+    width: 100%;
+  }
+  .ty-journal .heading-actions .button {
+    flex: 1;
+    font-size: 11px;
+  }
+  .ty-journal .metric-value {
+    font-size: 22px;
+  }
+  .ty-journal .metric-bottom {
+    font-size: 8px;
+  }
+  .ty-journal .filterbar .select-wrap {
+    width: 100%;
+  }
+  .ty-journal .select-wrap select {
+    width: 100%;
+    max-width: 100%;
+  }
+  .ty-journal .panel-head {
+    padding: 16px;
+    flex-wrap: wrap;
+  }
+  .ty-journal .chart-head strong {
+    font-size: 22px;
+  }
+  .ty-journal .calendar-day {
+    padding: 5px 3px;
+    min-height: 58px;
+  }
+  .ty-journal .calendar-day b {
+    font-size: 7px;
+  }
+  .ty-journal .calendar-day small {
+    font-size: 6px;
+  }
+  .ty-journal .calendar-grid {
+    padding: 0 10px;
+    gap: 3px;
+  }
+  .ty-journal .calendar-legend {
+    font-size: 6px;
+    gap: 8px;
+  }
+  .ty-journal .month-control {
+    margin-left: auto;
+  }
+  .ty-journal .panel-head h2 {
+    font-size: 13px;
+  }
+  .ty-journal .notebook-layout {
+    grid-template-columns: 1fr;
+  }
+  .ty-journal .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .ty-journal .overlay {
+    padding: 12px;
+  }
+  .ty-journal .modal {
+    padding: 20px;
+  }
+  .ty-journal .toast {
+    left: 50%;
+    width: 90%;
+    font-size: 11px;
+  }
+  .ty-journal .notebook-layout .note-list {
+    max-height: 260px;
+    overflow: auto;
+  }
+  .ty-journal .prompt-grid {
+    grid-template-columns: 1fr;
+  }
+  .ty-journal .coach-conversation {
+    padding: 15px;
+  }
+  .ty-journal .coach-composer {
+    margin: 15px;
+  }
+  .ty-journal .replay-controls {
+    flex-wrap: wrap;
+  }
+  .ty-journal .replay-controls .subtle {
+    margin: 0;
+  }
+  .ty-journal footer {
+    gap: 20px;
+    line-height: 1.7;
+    font-size: 8px;
+  }
+  .ty-journal .table-foot {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ty-journal *,
+  .ty-journal *:before,
+  .ty-journal *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Dashboard proportions and surfaces measured on TradersYard, 2026-10-27. */
+.ty-journal { min-height:100vh; font-size:14px; line-height:1.45; }
+.ty-journal .sidebar {width:240px;left:16px;top:16px;height:calc(100vh - 32px);border:0;border-radius:12px;padding:16px 12px;}
+.ty-journal main {margin-left:272px;width:calc(100% - 272px);}
+.ty-journal .brand {font-size:18px;padding:0 4px 30px;letter-spacing:-.4px;}
+.ty-journal .brand small {font-size:10px;letter-spacing:1.5px;}
+.ty-journal .workspace-label,.ty-journal .nav-section {font-size:10px;font-weight:400;letter-spacing:1px;padding-left:8px;}
+.ty-journal .nav-section {padding-top:25px;}
+.ty-journal .nav-item {font-size:13px;padding:9px 10px;gap:10px;}
+.ty-journal .nav-item.active {background:#262626;color:#fff;font-weight:500;}
+.ty-journal .profile {background:var(--surface-2);border:0;border-radius:12px;padding:12px 10px;margin-top:12px;}
+.ty-journal .topbar {height:68px;padding:0 24px 0 20px;border:0;}
+.ty-journal .breadcrumb,.ty-journal .top-actions {font-size:12px;}
+.ty-journal .profile-switch {display:flex;gap:10px;align-items:center;background:var(--surface);padding:8px 12px;border-radius:8px;}
+.ty-journal .page {padding:16px 24px 32px 20px;}
+.ty-journal .page-heading {margin-bottom:22px;}
+.ty-journal h1 {font-size:23px;font-weight:700;letter-spacing:-.4px;}
+.ty-journal .button {border-radius:8px;}
+.ty-journal .panel,.ty-journal .metric,.ty-journal .account-card {border-radius:16px;}
+.ty-journal .coach-preview {background:var(--surface);}
+.ty-journal .coach-orb {background:#4250eb18;border-color:#4250eb38;box-shadow:0 0 35px #4250eb10;color:#8992ff;}
+.ty-journal .coach-preview h3 {font-size:19px;}
+.ty-journal .legend-dot {background:var(--accent);}
+.ty-journal .welcome-screen {max-width:800px;margin:9vh auto;padding:24px;width:100%;}
+.ty-journal .welcome-brand {display:flex;align-items:center;gap:16px;font-size:22px;margin-bottom:48px;}
+.ty-journal .welcome-brand img {width:48px;filter:brightness(0) invert(1) drop-shadow(0 0 5px #ffffff50);}
+.ty-journal .welcome-brand b {font-weight:400;color:var(--muted);}
+.ty-journal .welcome-options {display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px;}
+.ty-journal .welcome-option {display:flex;flex-direction:column;align-items:flex-start;gap:20px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;}
+.ty-journal .welcome-option:hover {border-color:var(--accent);}
+.ty-journal .welcome-option p {color:var(--muted);flex:1;}
+.ty-journal .welcome-option>svg {color:#8590ff;}
+.ty-journal .source-links {display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;font-size:12px;}
+.ty-journal .source-links a {color:#8992ff;}
+.ty-journal .coach-message {overflow-wrap:anywhere;}
+.ty-journal .coach-message p {white-space:pre-wrap;}
+.ty-journal .coach-language {max-width:180px;}
+.ty-journal .coach-scope {padding:0 24px 12px;color:var(--muted);font-size:12px;}
+.ty-journal .coach-composer textarea {flex:1;min-height:48px;max-height:150px;}
+.ty-journal .coach-composer button {align-self:flex-end;}
+.ty-journal.embedded {min-height:500px;display:block;}
+.ty-journal.embedded .sidebar,.ty-journal.embedded .topbar {display:none;}
+.ty-journal.embedded main {width:100%;margin:0;}
+.ty-journal .embedded-nav {display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;}
+.ty-journal .embedded-nav button {padding:8px 12px;border-radius:8px;color:var(--muted);}
+.ty-journal .embedded-nav button.active {background:var(--surface-2);color:var(--text);}
+.ty-journal[data-theme="light"] .sidebar {background:#4250eb;color:white;--muted:#e1e4ff;--faint:#bec4ff;--surface-2:#3543cd;}
+.ty-journal[data-theme="light"] .sidebar .nav-item:hover,.ty-journal[data-theme="light"] .sidebar .nav-item.active {background:#ffffff22;color:white;}
+.ty-journal .welcome-logo {display:grid;place-items:center;width:62px;height:62px;border-radius:10px;}
+.ty-journal[data-theme="light"] .welcome-logo {background:var(--accent);}
+.ty-journal[data-theme="light"] .connection-logo {background:var(--accent);}
+.ty-journal[data-theme="light"] .source-links a {color:#3543cd;}
+@media(max-width:1220px){.ty-journal .sidebar{width:208px;}.ty-journal main{margin-left:240px;width:calc(100% - 240px);}.ty-journal .top-actions{gap:6px;}}
+@media(max-width:1000px){.ty-journal .sidebar{width:180px;left:10px;}.ty-journal main{margin-left:200px;width:calc(100% - 200px);}.ty-journal .brand{font-size:15px;}.ty-journal .page{padding:16px;}}
+@media(max-width:720px){.ty-journal {display:block;}.ty-journal .sidebar{position:relative;top:0;left:0;width:100%;height:auto;border-radius:0;padding:12px;}.ty-journal .sidebar .brand{display:flex;padding-bottom:12px;}.ty-journal main{margin:0;width:100%;}.ty-journal .welcome-options{grid-template-columns:1fr;}.ty-journal .topbar{padding:10px 16px;height:auto;}.ty-journal .page-heading{flex-wrap:wrap;}.ty-journal .welcome-screen{margin:20px auto;}.ty-journal .coach-language{max-width:120px;}.ty-journal .sidebar nav{display:flex;overflow:auto;}.ty-journal .nav-item{width:auto;white-space:nowrap;}.ty-journal .sidebar-bottom{display:none;}.ty-journal.embedded main{margin:0;width:100%;}}
+
+.ty-journal .sidebar {scrollbar-width:thin;scrollbar-color:var(--line) transparent;}
+.ty-journal .sidebar .brand {padding-bottom:20px;}
+.ty-journal .sidebar .nav-item {padding-top:7px;padding-bottom:7px;}
+.ty-journal .sidebar .nav-section {padding-top:18px;padding-bottom:8px;}
+.ty-journal .sidebar-bottom {padding-top:16px;}
+@media (min-width:721px) and (max-height:780px) {
+  .ty-journal .sidebar .nav-item {padding-top:5px;padding-bottom:5px;}
+  .ty-journal .sidebar .nav-section {padding-top:12px;padding-bottom:6px;}
+  .ty-journal .sidebar .brand {padding-bottom:14px;}
+}
+.ty-journal .coach-page {height:calc(100dvh - 180px);min-height:440px;display:flex;flex-direction:column;}
+.ty-journal .coach-page .panel-head {flex-shrink:0;padding-top:18px;padding-bottom:14px;}
+.ty-journal .coach-conversation {flex:1;min-height:0;max-height:none;overflow:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent;}
+
+/* Keep navigation, forms and actions usable at laptop heights and narrow host widths. */
+@media (min-width:721px) {
+  .ty-journal .sidebar {overflow:hidden;}
+  .ty-journal .sidebar > .brand,.ty-journal .sidebar-bottom {flex-shrink:0;}
+  .ty-journal .sidebar > nav {flex:1;min-height:0;overflow:auto;scrollbar-width:thin;}
+  .ty-journal .sidebar-bottom {padding-top:10px;}
+}
+.ty-journal .profile > div {min-width:0;overflow-wrap:anywhere;}
+.ty-journal .profile .icon,.ty-journal .avatar {flex-shrink:0;}
+.ty-journal .filterbar {flex-wrap:wrap;}
+.ty-journal .filterbar .select-wrap {flex:1 1 230px;min-width:0;max-width:420px;}
+.ty-journal .filterbar .select-wrap select {width:100%;max-width:100%;min-width:0;font-size:12px;}
+.ty-journal .date-range input {font-size:12px;}
+.ty-journal .extra-filters {flex-wrap:wrap;}
+.ty-journal .extra-filters > label {min-width:120px;}
+.ty-journal .panel-head,.ty-journal .panel-head > .row,.ty-journal .page-heading,.ty-journal .heading-actions {flex-wrap:wrap;gap:12px;}
+.ty-journal .modal {max-width:100%;}
+.ty-journal .form-grid > label,.ty-journal .form-grid input,.ty-journal .form-grid select {min-width:0;max-width:100%;}
+.ty-journal .table-scroll {max-width:100%;}
+.ty-journal .recharts-tooltip-wrapper {color:var(--text);}
+.ty-journal .recharts-default-tooltip .recharts-tooltip-label {color:var(--text);}
+.ty-journal .profile-switch {max-width:220px;overflow:hidden;overflow-wrap:anywhere;}
+@media (max-width:850px) {
+  .ty-journal .form-grid {grid-template-columns:minmax(0,1fr);}
+  .ty-journal .topbar {height:auto;min-height:68px;flex-wrap:wrap;gap:10px;padding-block:12px;}
+  .ty-journal .top-actions {flex-wrap:wrap;}
+}
+.ty-journal .coach-composer {flex-shrink:0;margin:12px 24px 20px;}
+.ty-journal .coach-message p {font-size:14px;line-height:1.7;color:var(--text);}
+.ty-journal .coach-fact {font-size:12px;}
+.ty-journal.embedded .coach-page {height:600px;}
+
+.ty-journal.single-page {display:block;}
+.ty-journal.single-page main {width:100%;margin:0;}
+.ty-journal.single-page .page {max-width:1600px;margin:0 auto;padding:20px 32px 64px;}
+.ty-journal.single-page .topbar {max-width:1600px;margin:0 auto;padding:16px 32px;height:auto;min-height:72px;}
+.ty-journal .single-brand {display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;color:var(--text);}
+.ty-journal .single-brand img {width:42px;height:42px;object-fit:contain;background:#4250eb;border-radius:10px;padding:5px;filter:drop-shadow(0 0 3px #ffffff44);}
+.ty-journal .journal-sections {display:flex;flex-direction:column;gap:40px;}
+.ty-journal .journal-section {min-width:0;padding-top:12px;border-top:1px solid var(--line);}
+.ty-journal .section-title {font-size:21px;margin:4px 0 20px;scroll-margin-top:90px;}
+.ty-journal .section-title:focus {outline:2px solid var(--accent);outline-offset:6px;}
+.ty-journal.single-page .filterbar {position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 0;}
+.ty-journal.single-page .coach-page {height:600px;}
+.ty-journal .partners-page {max-width:960px;display:grid;gap:24px;}
+.ty-journal .partner-intro {padding:8px 0 16px;}
+.ty-journal .partner-intro > svg {color:var(--accent);}
+.ty-journal .partner-intro h2 {font-size:28px;margin:12px 0;}
+.ty-journal .partner-card {padding:32px;}
+.ty-journal .partner-brand {display:flex;align-items:center;gap:18px;margin-bottom:24px;}
+.ty-journal .partner-brand h2 {font-size:26px;margin:0;}
+.ty-journal .partner-brand p {margin:4px 0;color:var(--muted);}
+.ty-journal .partner-offer {display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px dashed var(--accent);border-radius:12px;padding:20px;margin:24px 0;}
+.ty-journal .partner-offer strong {display:block;font-size:32px;letter-spacing:4px;user-select:all;}
+.ty-journal .partner-card > p {margin:16px 0;}
+.ty-journal a.button {text-decoration:none;}
+.ty-journal .feefo-card {display:flex;align-items:center;justify-content:space-between;gap:28px;padding:28px 32px;flex-wrap:wrap;}
+.ty-journal .feefo-copy {flex:1;min-width:200px;}
+.ty-journal .feefo-name {font-weight:700;font-size:24px;letter-spacing:-1px;}
+.ty-journal .feefo-copy h2 {font-size:17px;margin:12px 0 6px;}
+.ty-journal .feefo-copy p {margin:0;color:var(--muted);font-size:13px;}
+.ty-journal .feefo-rating {display:grid;gap:6px;justify-items:center;}
+.ty-journal .feefo-score {display:flex;align-items:baseline;gap:6px;}
+.ty-journal .feefo-score strong {font-size:34px;line-height:1;font-weight:700;}
+.ty-journal .feefo-score span,.ty-journal .feefo-rating small {color:var(--muted);}
+.ty-journal .feefo-rating small {font-size:11px;}
+.ty-journal .rating-stars {position:relative;display:inline-block;font:26px/1 Arial,sans-serif;letter-spacing:2px;white-space:nowrap;color:var(--line);}
+.ty-journal .rating-fill {position:absolute;inset:0 auto 0 0;width:94%;overflow:hidden;color:#edb900;}
+.ty-journal .sync-banner {display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:0 0 20px;background:var(--surface);}
+.ty-journal .sync-banner > svg {flex-shrink:0;color:var(--accent);}
+.ty-journal .sync-banner > div {flex:1;min-width:0;display:grid;gap:5px;}
+.ty-journal .sync-banner strong {font-size:13px;}
+.ty-journal .sync-banner span {font-size:12px;color:var(--muted);overflow-wrap:anywhere;}
+.ty-journal .sync-banner progress {width:100%;height:5px;accent-color:var(--accent);}
+@media(max-width:720px){.ty-journal .feefo-card{padding:22px;gap:24px;}.ty-journal .feefo-card > a{width:100%;justify-content:center;}.ty-journal .sync-banner{flex-wrap:wrap;}}
+@media(max-width:720px){.ty-journal.single-page .page{padding:16px;}.ty-journal.single-page .topbar{padding:12px 16px;flex-wrap:wrap;gap:12px;}.ty-journal .single-brand{font-size:15px;}.ty-journal.single-page .filterbar{position:static;}.ty-journal .partner-card{padding:20px;}}
+
+/* Account menu shares one fixed layout box with its trigger in both themes. */
+.ty-journal .account-picker {position:relative;flex:1 1 300px;min-width:0;max-width:420px;}
+.ty-journal .account-picker-trigger {display:flex;align-items:center;gap:10px;width:100%;height:40px;padding:0 12px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--text);font-size:12px;text-align:left;}
+.ty-journal .account-picker-trigger > span {flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ty-journal .account-picker-trigger > svg {flex-shrink:0;color:var(--muted);}
+.ty-journal .account-picker-detail {color:var(--muted);}
+.ty-journal .account-picker-trigger[aria-expanded=true] {border-color:var(--accent);}
+.ty-journal .account-picker-menu {position:absolute;z-index:50;top:calc(100% + 6px);left:0;width:100%;box-sizing:border-box;padding:5px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 30px #00000030;outline:none;}
+.ty-journal .account-picker-option {display:flex;align-items:center;gap:12px;padding:9px 10px;min-height:52px;border-radius:5px;cursor:pointer;}
+.ty-journal .account-picker-option > span {flex:1;min-width:0;}
+.ty-journal .account-picker-option strong,.ty-journal .account-picker-option small {display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.5;}
+.ty-journal .account-picker-option strong {font-size:12px;font-weight:500;}
+.ty-journal .account-picker-option small {font-size:11px;color:var(--muted);}
+.ty-journal .account-picker-option > svg {flex-shrink:0;color:var(--accent);}
+.ty-journal .account-picker-option.highlighted {background:var(--hover);outline:1px solid var(--line);outline-offset:-1px;}
+@media(max-width:850px){.ty-journal .account-picker {flex-basis:100%;max-width:none;}}

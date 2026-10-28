@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tradersyard-journal": {
+      "command": "node",
+      "args": ["C:/Users/Roshan/Desktop/Journal/mcp/server.mjs"]
+    }
+  }
+}

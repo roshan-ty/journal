@@ -1,0 +1,967 @@
+{
+  "version": "0.3.1",
+  "verifiedAt": "2026-10-28T18:24:42.704Z",
+  "runtimeFiles": 77,
+  "files": [
+    {
+      "file": "Dashboard Integration\\INTEGRATION.md",
+      "sha256": "21a8c7b88f106939460022ebf1ed973843bb1a120e3c44adc679b00b59b649c0",
+      "bytes": 7335
+    },
+    {
+      "file": "Dashboard Integration\\adapter.d.ts",
+      "sha256": "a6b58fb9b5507628c217ffe4f80854ef5cbece5d2333f14268d0e510c2abe164",
+      "bytes": 1721
+    },
+    {
+      "file": "Dashboard Integration\\example.html",
+      "sha256": "ca59c902ff9594a05871f41f02d8be815d192730f0da9b7fe83cf8bb8e652b20",
+      "bytes": 1791
+    },
+    {
+      "file": "Dashboard Integration\\research\\GOOGLE-SIGN-IN-INTEGRATION.md",
+      "sha256": "35c9fe764bbd2094ed756292567a6f4743f089920d821a7cee9664c67947a8eb",
+      "bytes": 5142
+    },
+    {
+      "file": "Dashboard Integration\\tradersyard-journal.css",
+      "sha256": "0bbeb13e7172cd09c30dfc8ee82c9f91c2d6032acdd356314aeef100114c8302",
+      "bytes": 148020
+    },
+    {
+      "file": "Dashboard Integration\\tradersyard-journal.js",
+      "sha256": "f64782ab6eb017c52137855cde03b49d179ac298ddc8da2df8b17f7f3b18acf9",
+      "bytes": 2215194
+    },
+    {
+      "file": "Production Ready App\\LICENSE.electron.txt",
+      "sha256": "5154e165bd6c2cc0cfbcd8916498c7abab0497923bafcd5cb07673fe8480087d",
+      "bytes": 1096
+    },
+    {
+      "file": "Production Ready App\\LICENSES.chromium.html",
+      "sha256": "5d545ce8065079f38a82472ab93bd62fcdf73cd319f0771ef51c45c7e243f1d4",
+      "bytes": 20367775
+    },
+    {
+      "file": "Production Ready App\\READ ME.txt",
+      "sha256": "c5135fbf627e1f9a72eb5b4ef5bbdc07b1fa8cc90c061d406ea287ec9f58a24d",
+      "bytes": 2303
+    },
+    {
+      "file": "Production Ready App\\TradersYard Journal.exe",
+      "sha256": "faf184874359e14ca501edbc2b67371bd0b105999c41808cf565462e7cad2596",
+      "bytes": 235667968
+    },
+    {
+      "file": "Production Ready App\\chrome_100_percent.pak",
+      "sha256": "15a5bcb49a5c02d6a4e736e8dfa11dabb0bac0589641a4e25f0c06472ccaae6d",
+      "bytes": 119889
+    },
+    {
+      "file": "Production Ready App\\chrome_200_percent.pak",
+      "sha256": "b7acfb068fa681f4ecb8f782bd4e3926590076c61fd0de3de4a12dde227cf52b",
+      "bytes": 197073
+    },
+    {
+      "file": "Production Ready App\\d3dcompiler_47.dll",
+      "sha256": "a05f99734f7c4822fefc12b367af21fd0976ed6608752fb1e1e80b6ece7ecbbb",
+      "bytes": 4741488
+    },
+    {
+      "file": "Production Ready App\\dxcompiler.dll",
+      "sha256": "b25b6c8bc64c9ff17ed16e0d272bf0bd7b305f3e19f792a72c8145a6bf624584",
+      "bytes": 25637888
+    },
+    {
+      "file": "Production Ready App\\dxil.dll",
+      "sha256": "77e039c905030a641e53658a008b74e90635a5ea9b6b79eabd0f2003bdfca59a",
+      "bytes": 1509760
+    },
+    {
+      "file": "Production Ready App\\ffmpeg.dll",
+      "sha256": "1b9d751721a40fc8fba2355172382d0e0c210e54c7f2862ebd8a6b6a093f832f",
+      "bytes": 3057152
+    },
+    {
+      "file": "Production Ready App\\icudtl.dat",
+      "sha256": "bd8c145abdf3f8383276ce01dfa4ae48709bef9fef1c0711eb7c3fab4f6eb7c2",
+      "bytes": 10876560
+    },
+    {
+      "file": "Production Ready App\\libEGL.dll",
+      "sha256": "fa8cf715db0e2a7a0f20a2b583221e439c484390b400ec70ff5956ea70d55aae",
+      "bytes": 478208
+    },
+    {
+      "file": "Production Ready App\\libGLESv2.dll",
+      "sha256": "b6548524109b605155fcccccac8836c3d29dde3f1f6337f67a2bfb7931b9e0a0",
+      "bytes": 8049664
+    },
+    {
+      "file": "Production Ready App\\locales\\af.pak",
+      "sha256": "d990f4ced39e31a1149d2a1842ce2504706885e6ab05957ee2f338c77d94c16b",
+      "bytes": 620482
+    },
+    {
+      "file": "Production Ready App\\locales\\am.pak",
+      "sha256": "8d3d5dfc64acfbb0c35036d74561d09ddf3b22058eeed0f8d26a2e9c0703248e",
+      "bytes": 1006731
+    },
+    {
+      "file": "Production Ready App\\locales\\ar.pak",
+      "sha256": "c54e67e232852d9b14b2bbf4c1a83f0e13a4970c2a83fd26dfb8d8c9eb40e3d6",
+      "bytes": 1109717
+    },
+    {
+      "file": "Production Ready App\\locales\\bg.pak",
+      "sha256": "2789212aac5f2133ed23c1f84623bc64eb4cfbd93aef7af751d1221e27a21daa",
+      "bytes": 1150764
+    },
+    {
+      "file": "Production Ready App\\locales\\bn.pak",
+      "sha256": "e72b72977b40fb10472fe1a3fcffcda8b434bf52e2bb2da2935faa80da224812",
+      "bytes": 1479936
+    },
+    {
+      "file": "Production Ready App\\locales\\ca.pak",
+      "sha256": "bc72ff7dd7c4286c1abb52da11c4dfdc42c917cdb267004eb2a906201850bca6",
+      "bytes": 699615
+    },
+    {
+      "file": "Production Ready App\\locales\\cs.pak",
+      "sha256": "8386f70e830a565d0674014ae4ad385a61eb43d7e7b99d4d373d14388dfd32ce",
+      "bytes": 726069
+    },
+    {
+      "file": "Production Ready App\\locales\\da.pak",
+      "sha256": "ff687bb6dc79bb638bca4f6a9226544a783209645922d323cf777b169690b25a",
+      "bytes": 652598
+    },
+    {
+      "file": "Production Ready App\\locales\\de.pak",
+      "sha256": "d2dab9943eeb4c4792dc1105d58bceee0e55f5008d87e97708ffde5d725a36b9",
+      "bytes": 700828
+    },
+    {
+      "file": "Production Ready App\\locales\\el.pak",
+      "sha256": "3ee2e46a5a569e411ccf9d77ee4f356e1833bfccbaefcc5e71b7c1517206ab5f",
+      "bytes": 1265039
+    },
+    {
+      "file": "Production Ready App\\locales\\en-GB.pak",
+      "sha256": "aac3b4904d021d58d053bdea2d8056a219ecda1e341d87cb70070aea2cee418f",
+      "bytes": 565496
+    },
+    {
+      "file": "Production Ready App\\locales\\en-US.pak",
+      "sha256": "bce3ec06227dba2273c4ff12482cba37b709cc8bf5fd29c4380f9a07b92bf821",
+      "bytes": 571518
+    },
+    {
+      "file": "Production Ready App\\locales\\es-419.pak",
+      "sha256": "385691afee6f73d929007ecceca62afeccaa5411015af04cb02d49b2a757ae35",
+      "bytes": 690701
+    },
+    {
+      "file": "Production Ready App\\locales\\es.pak",
+      "sha256": "bcffeb2649d529c69ca2c310040f09708208bb76414b1ee6f402c5a9661acafe",
+      "bytes": 686785
+    },
+    {
+      "file": "Production Ready App\\locales\\et.pak",
+      "sha256": "ecc838878412cc9f28dda9efed2fc60b67315f5fdf64e912db33cee7571a5939",
+      "bytes": 627098
+    },
+    {
+      "file": "Production Ready App\\locales\\fa.pak",
+      "sha256": "5061cb29280711363d3bf7d8ec1e7e4057393056af5ae2b6e94f31714dfcaac9",
+      "bytes": 1038215
+    },
+    {
+      "file": "Production Ready App\\locales\\fi.pak",
+      "sha256": "18d904efd7d15a49ef3638c45a40b3aa604e5ec4b68e017ab3f568e6a8202fd4",
+      "bytes": 638637
+    },
+    {
+      "file": "Production Ready App\\locales\\fil.pak",
+      "sha256": "4034bd7ef11f48d7d646aacb7006562f0f9caec888785a13c36e31b9724dd798",
+      "bytes": 723756
+    },
+    {
+      "file": "Production Ready App\\locales\\fr.pak",
+      "sha256": "1972f718698d83dd9af8ca7c77062dee0cb888de2eb096259c776752322077ae",
+      "bytes": 746436
+    },
+    {
+      "file": "Production Ready App\\locales\\gu.pak",
+      "sha256": "b207f2046791aa8150015ca78f9f76f2f6509953a00c5e89b155bb40e3a26474",
+      "bytes": 1462607
+    },
+    {
+      "file": "Production Ready App\\locales\\he.pak",
+      "sha256": "0600c34932b58b18f1d3196567af67de09ecf9eee8ea4378a22aef74fdb0eca2",
+      "bytes": 908716
+    },
+    {
+      "file": "Production Ready App\\locales\\hi.pak",
+      "sha256": "8465aa28c6a2c74d98b2c29ea50c4f8e09aee553f8b01f9bccd1236dab3dc85d",
+      "bytes": 1549617
+    },
+    {
+      "file": "Production Ready App\\locales\\hr.pak",
+      "sha256": "6990ba056fcd1cac97ed5b48024be4ab366846a9c517d43a181cbb0eefa095d1",
+      "bytes": 698898
+    },
+    {
+      "file": "Production Ready App\\locales\\hu.pak",
+      "sha256": "b83fc60c6d3ce3a04338ea16ba4627d6dfdf81f4373fe4921ac01c7c9558bcb6",
+      "bytes": 747469
+    },
+    {
+      "file": "Production Ready App\\locales\\id.pak",
+      "sha256": "01f3853d21d4543ecad1ceeeee40fd9cfd4fd31e6822c590618aa965eb9c46c5",
+      "bytes": 618259
+    },
+    {
+      "file": "Production Ready App\\locales\\it.pak",
+      "sha256": "683bc613c4ee53ea46824856a4b56d5b187355d2e2f6e52284c8e7fb9eee4e01",
+      "bytes": 675899
+    },
+    {
+      "file": "Production Ready App\\locales\\ja.pak",
+      "sha256": "ba5b0b157956274ed1b8e1af1d858ca9862d59ce3ba5b833f54a613697153825",
+      "bytes": 824122
+    },
+    {
+      "file": "Production Ready App\\locales\\kn.pak",
+      "sha256": "d154c50013245a268ba9b4b49639516ab0593922d893bdd551e4aa30ee6a3e2f",
+      "bytes": 1681341
+    },
+    {
+      "file": "Production Ready App\\locales\\ko.pak",
+      "sha256": "8a899f9df64736f4f8b295361bcb95f501835350b9320c2396e1d6f03cde5ee8",
+      "bytes": 701225
+    },
+    {
+      "file": "Production Ready App\\locales\\lt.pak",
+      "sha256": "0c755ce72d1b71e77d58ab014228458d8ce2b0c51a9b00769635c6609255c9f2",
+      "bytes": 759941
+    },
+    {
+      "file": "Production Ready App\\locales\\lv.pak",
+      "sha256": "911f922f6ab11d04c4913b04088619276994104979b2c5f132182953fabc24a9",
+      "bytes": 757295
+    },
+    {
+      "file": "Production Ready App\\locales\\ml.pak",
+      "sha256": "8beb5df27b5a1b88d0f441518a807b2c6acd99a81820cd0249710ea12bc179d0",
+      "bytes": 1728736
+    },
+    {
+      "file": "Production Ready App\\locales\\mr.pak",
+      "sha256": "1971da05e4868841c9d9f78be5e17ab09178af99b86a6c07df385015a0c9d9ef",
+      "bytes": 1431694
+    },
+    {
+      "file": "Production Ready App\\locales\\ms.pak",
+      "sha256": "b60c552a9ced5d0e1f4ed408f65a04068acad7d80db7cf88528fbebbcd337e23",
+      "bytes": 651309
+    },
+    {
+      "file": "Production Ready App\\locales\\nb.pak",
+      "sha256": "cb50908b03c77263297e63ff75d4d3c58fb0cb491c69a8964239e787c762f52d",
+      "bytes": 623206
+    },
+    {
+      "file": "Production Ready App\\locales\\nl.pak",
+      "sha256": "b6a6cecceeb0097d5fd9628c684d53339f7871948655740e0f625bfedbf526ae",
+      "bytes": 649223
+    },
+    {
+      "file": "Production Ready App\\locales\\pl.pak",
+      "sha256": "dee5b710ca72425cd4d1236ce260f8d68b41bfdfceaeb2f98c8e89217b24208f",
+      "bytes": 725422
+    },
+    {
+      "file": "Production Ready App\\locales\\pt-BR.pak",
+      "sha256": "4ce3dd9bdfe8042134cebe618aadd1d29daa91dc3bd7776a2a42639f97bef101",
+      "bytes": 680416
+    },
+    {
+      "file": "Production Ready App\\locales\\pt-PT.pak",
+      "sha256": "266e49a497c6bf9e48502c7eb01aea1fa90260b6fb1609165ff50307a3d81b59",
+      "bytes": 684180
+    },
+    {
+      "file": "Production Ready App\\locales\\ro.pak",
+      "sha256": "16b11fb73ea0c5d0336de453d3e2abd2de69b3e6c66dcd72bae318666525bb18",
+      "bytes": 710046
+    },
+    {
+      "file": "Production Ready App\\locales\\ru.pak",
+      "sha256": "f3c1d6a7344a98a150d2731f0a7009bcf3adfd0b712dc7dc41f1ba5fcd13eeda",
+      "bytes": 1177506
+    },
+    {
+      "file": "Production Ready App\\locales\\sk.pak",
+      "sha256": "d9cf65b23dd452e4a42331b32e39b890ab47152b71ea247dff628d7cb1dbda9c",
+      "bytes": 738140
+    },
+    {
+      "file": "Production Ready App\\locales\\sl.pak",
+      "sha256": "1550f8df161a3484a6c7af9bc5321fae524e10d6853467afcb8749054a73e601",
+      "bytes": 706747
+    },
+    {
+      "file": "Production Ready App\\locales\\sr.pak",
+      "sha256": "a76930f2c72e49dc3a2c9be7e7bce0f9da0c93de03b6e275521fa86da0d2d39c",
+      "bytes": 1088532
+    },
+    {
+      "file": "Production Ready App\\locales\\sv.pak",
+      "sha256": "b101225f190ed1f1738059283058703afb7eb2e0fb245dd076f919d993427b04",
+      "bytes": 630664
+    },
+    {
+      "file": "Production Ready App\\locales\\sw.pak",
+      "sha256": "f4e0e2f5b49d9d767884074cc3ee8d0dd83a986f7c1d2de236885998d7a53460",
+      "bytes": 667143
+    },
+    {
+      "file": "Production Ready App\\locales\\ta.pak",
+      "sha256": "9fbc40727cf1143d181fe6b21b63ee0f8ac020360ef23ce76759cbc0e4c009a8",
+      "bytes": 1720220
+    },
+    {
+      "file": "Production Ready App\\locales\\te.pak",
+      "sha256": "8b20dbd1ce97d4bde6273051991c593d74d51e90966dd6291b38b0185f4d0fe7",
+      "bytes": 1591885
+    },
+    {
+      "file": "Production Ready App\\locales\\th.pak",
+      "sha256": "55cdaecc9ee85290679c7c7331afa321eaa346ea33e77f2f587c0844199df7ec",
+      "bytes": 1337498
+    },
+    {
+      "file": "Production Ready App\\locales\\tr.pak",
+      "sha256": "81a2cedd23026b21e617356a057839ef0f94530b51fc325c0f91ddb5b11bc932",
+      "bytes": 679613
+    },
+    {
+      "file": "Production Ready App\\locales\\uk.pak",
+      "sha256": "39e272f1acb9c0b0bc791efa0347b92cb29e20cfbb5ae14f539628f10f45b0f1",
+      "bytes": 1185537
+    },
+    {
+      "file": "Production Ready App\\locales\\ur.pak",
+      "sha256": "0c1cfa61d9a9be6338b0a160b43ff362a982003053ae5be3b3ec867e78374d7b",
+      "bytes": 1021689
+    },
+    {
+      "file": "Production Ready App\\locales\\vi.pak",
+      "sha256": "0458ac35755d2b86a116fa4a15de9c3ca7813a12852e43d697dcff2547c323ed",
+      "bytes": 808053
+    },
+    {
+      "file": "Production Ready App\\locales\\zh-CN.pak",
+      "sha256": "c2b05a5970bbb02226905b9e74fe44f32cd2796d4efc0669481c25f95a0882bb",
+      "bytes": 577797
+    },
+    {
+      "file": "Production Ready App\\locales\\zh-TW.pak",
+      "sha256": "39e6196432e79380a812d6af2e99fd198a5ca3e81565435af136531a4c9cbf42",
+      "bytes": 570095
+    },
+    {
+      "file": "Production Ready App\\resources.pak",
+      "sha256": "b92a3508c9631066b013adb736684e63e7b9e82e5f4c8a005b243e8e6b2bb5d2",
+      "bytes": 6875967
+    },
+    {
+      "file": "Production Ready App\\resources\\app.asar",
+      "sha256": "40ef8f8a2989fff551053d2b62ef03a30a6ce1e65d170cae44edbd3f52900eee",
+      "bytes": 1807137
+    },
+    {
+      "file": "Production Ready App\\resources\\elevate.exe",
+      "sha256": "9b1fbf0c11c520ae714af8aa9af12cfd48503eedecd7398d8992ee94d1b4dc37",
+      "bytes": 107520
+    },
+    {
+      "file": "Production Ready App\\resources\\mcp\\server.cjs",
+      "sha256": "5e8fc46f63f3044b431dc8b2fdcf84631da8f8dfe050ec3890094e65d8bd8892",
+      "bytes": 1379042
+    },
+    {
+      "file": "Production Ready App\\snapshot_blob.bin",
+      "sha256": "074571140666f561594889ccb6439bc30d21935f0c7157c0edd118223950bd7d",
+      "bytes": 346664
+    },
+    {
+      "file": "Production Ready App\\v8_context_snapshot.bin",
+      "sha256": "b0874ba2f21ccf59f8a3086168ad782834aeeabb4acb644a20744a1cbeb5bf59",
+      "bytes": 721416
+    },
+    {
+      "file": "Production Ready App\\vk_swiftshader.dll",
+      "sha256": "4bd642ea08bd933014cd5c44911c4422bd6f69c8569f494de79054536a6469e0",
+      "bytes": 5529088
+    },
+    {
+      "file": "Production Ready App\\vk_swiftshader_icd.json",
+      "sha256": "32d83ff113fef532a9f97e0d2831f8656628ab1c99e9060f0332b1532839afd9",
+      "bytes": 106
+    },
+    {
+      "file": "Production Ready App\\vulkan-1.dll",
+      "sha256": "95785b9eb4ca4cca1a140041042f6007be1cbe08b4ad537b7b52ccc3d3939124",
+      "bytes": 925696
+    },
+    {
+      "file": "README.md",
+      "sha256": "23b8fe117a08177e113faee169b7766b5bf655895e88f7bc3f40893d0276d952",
+      "bytes": 4089
+    },
+    {
+      "file": "Setup File\\setup.exe",
+      "sha256": "b1f34bf3c57c47207dfcd3d6deab527aa31132de6e128a8930dddb16c7b2b9c7",
+      "bytes": 113737399
+    },
+    {
+      "file": "Source\\.gitignore",
+      "sha256": "083b1c0365cac958ec64a20e8ce3ef5b6111e5c4ebaf534a226a9e40ac23d649",
+      "bytes": 102
+    },
+    {
+      "file": "Source\\INTEGRATION.md",
+      "sha256": "21a8c7b88f106939460022ebf1ed973843bb1a120e3c44adc679b00b59b649c0",
+      "bytes": 7335
+    },
+    {
+      "file": "Source\\README.md",
+      "sha256": "8fd1629f630fdb6b980440c133762b7cdedea103a249fa39ba6b12cb388957f5",
+      "bytes": 645
+    },
+    {
+      "file": "Source\\THIRD_PARTY_NOTICES.md",
+      "sha256": "ce03442a1d4d3f1fb4eaad85d8c4365df2cba2e6a27d041d1f797c544c627961",
+      "bytes": 943
+    },
+    {
+      "file": "Source\\build\\APP-GUIDE.txt",
+      "sha256": "c5135fbf627e1f9a72eb5b4ef5bbdc07b1fa8cc90c061d406ea287ec9f58a24d",
+      "bytes": 2303
+    },
+    {
+      "file": "Source\\build\\DEPENDENCY_LICENSES.txt",
+      "sha256": "b29e9930421841164cfbc7cb635eb0323b4ba0f961423f3716078fdf0ef9472c",
+      "bytes": 168860
+    },
+    {
+      "file": "Source\\build\\icon.ico",
+      "sha256": "bfc58d80b3a2fb3d7b23afb899c40371b10087b08f7c385a3df4072b1951e4b5",
+      "bytes": 285478
+    },
+    {
+      "file": "Source\\build\\installer.nsh",
+      "sha256": "65d649d1f1f3642a17169aaa3b6d2011baa8ddd7933fc67f7f467526084a71b8",
+      "bytes": 2461
+    },
+    {
+      "file": "Source\\dist-embed\\tradersyard-journal.css",
+      "sha256": "0bbeb13e7172cd09c30dfc8ee82c9f91c2d6032acdd356314aeef100114c8302",
+      "bytes": 148020
+    },
+    {
+      "file": "Source\\dist-embed\\tradersyard-journal.js",
+      "sha256": "f64782ab6eb017c52137855cde03b49d179ac298ddc8da2df8b17f7f3b18acf9",
+      "bytes": 2215194
+    },
+    {
+      "file": "Source\\dist-mcp\\server.cjs",
+      "sha256": "6866f4ed159558ad4d8cba37b43f0f24ecd7aae3a5bacf75f7d814f4dd449df9",
+      "bytes": 1379015
+    },
+    {
+      "file": "Source\\dist\\assets\\Satoshi-400-CPM9dct4.woff2",
+      "sha256": "50dca57f0b77918e0fb7dac998c3f5ef6b0c2a29657da97658a04f98ac532fc5",
+      "bytes": 25516
+    },
+    {
+      "file": "Source\\dist\\assets\\Satoshi-500-ByP-Zb-9.woff2",
+      "sha256": "af02a72246f53ad49c44a591921edbd39ec8258a03d8cc2e0532aa1e497e85b4",
+      "bytes": 25596
+    },
+    {
+      "file": "Source\\dist\\assets\\Satoshi-700-Bd5kKQ_U.woff2",
+      "sha256": "353a7fbfb4475f0c31470a7449226006cb64211c71055ca9db860a8acdaa9f68",
+      "bytes": 25328
+    },
+    {
+      "file": "Source\\dist\\assets\\charts-BA62aQhd.js",
+      "sha256": "292ec0de526c3e40b19215f6d27ba653b8df886a1f4aadc71bea6ed8a643de5a",
+      "bytes": 401735
+    },
+    {
+      "file": "Source\\dist\\assets\\index-CISX6T-3.js",
+      "sha256": "de0d9e3c8f96ed7bb65f792cdeac06048bec6bcee4d84668cf41da1dde381da5",
+      "bytes": 360684
+    },
+    {
+      "file": "Source\\dist\\assets\\index-Dwkm7ilY.css",
+      "sha256": "bc3e3a0aebd92038a6ce4e9f8f83278691d44dc066d9734e025d6e63eefce870",
+      "bytes": 46176
+    },
+    {
+      "file": "Source\\dist\\assets\\ty-logo-B02BytWg.png",
+      "sha256": "8c582562ff96926bcdbe16a54fc8023d2108872a8da88e0b632bc73a8d0d41d6",
+      "bytes": 403010
+    },
+    {
+      "file": "Source\\dist\\index.html",
+      "sha256": "e699b9cd301ca2fdb61aec8f47e6a7d9acb7e26680b0ccb3aa18e7ba4209fa06",
+      "bytes": 710
+    },
+    {
+      "file": "Source\\electron\\google-auth-hosts.cjs",
+      "sha256": "7033d96f04fff846ca3515e639deed99ad64e7cbababa86039d4f830ec11c584",
+      "bytes": 4971
+    },
+    {
+      "file": "Source\\electron\\main.cjs",
+      "sha256": "03421fb9bf22b78d06c6d7fd57178152d297d87ca56638c621dd05f8cd006af6",
+      "bytes": 9379
+    },
+    {
+      "file": "Source\\electron\\preload.cjs",
+      "sha256": "a991bc1b5b408585068e1b6fb7fcbc6df187b567ce8a77f891b3180b5fe12e4f",
+      "bytes": 728
+    },
+    {
+      "file": "Source\\electron\\provider.cjs",
+      "sha256": "be089a678401a41bdf306d9ad697fd7d41a5e720852d9b6c068566dd2b6d69d3",
+      "bytes": 15410
+    },
+    {
+      "file": "Source\\electron\\store.cjs",
+      "sha256": "403efa91a6ee938c4ad06cd8d21a0de3b0a4c220c2c0a3619c22b9ba6630c864",
+      "bytes": 2111
+    },
+    {
+      "file": "Source\\electron\\sync.cjs",
+      "sha256": "e0e0b099633b56fb1371ff2126ee811cc6968caa61544830228c776787c54102",
+      "bytes": 3393
+    },
+    {
+      "file": "Source\\electron\\window.cjs",
+      "sha256": "9985e53db1df5b240417c7ff843110759092e914dcd25777d7929115e7bc38f4",
+      "bytes": 220
+    },
+    {
+      "file": "Source\\examples\\embed.html",
+      "sha256": "ca59c902ff9594a05871f41f02d8be815d192730f0da9b7fe83cf8bb8e652b20",
+      "bytes": 1791
+    },
+    {
+      "file": "Source\\index.html",
+      "sha256": "f902c53c3199870455dd0922d3dfed586d988c0df28d4f84361648c89875f663",
+      "bytes": 533
+    },
+    {
+      "file": "Source\\knowledge\\README.md",
+      "sha256": "450f799943d4b73e6d07e67a0e7665deefbf4bf951c756aa9e3028b9dc83538a",
+      "bytes": 2569
+    },
+    {
+      "file": "Source\\knowledge\\coach.json",
+      "sha256": "38d7fff1af2f8fab54f06f047ca3e28a75368982d608703a17292c597736d482",
+      "bytes": 1753
+    },
+    {
+      "file": "Source\\knowledge\\roman-guidance.mjs",
+      "sha256": "8ba9cfc76d78b29e0593c22b3ba587ae887db5a51634549b4c2ea72c799e14bd",
+      "bytes": 4664
+    },
+    {
+      "file": "Source\\knowledge\\tradersyard.json",
+      "sha256": "04958685eba41635d57cbcf9c44e88128963b806dc3a17e6a8430f9f215651da",
+      "bytes": 6871
+    },
+    {
+      "file": "Source\\mcp\\config.example.json",
+      "sha256": "838d1d59d2ad4c64d8a5a73ae7ad7c069ec0521cdcc13d9eca9d2da2838aedb4",
+      "bytes": 151
+    },
+    {
+      "file": "Source\\mcp\\server.mjs",
+      "sha256": "0721a03d5fede0075901dcf4ce1773670c4bbe3c57e3f6332874169c9cc742d2",
+      "bytes": 5861
+    },
+    {
+      "file": "Source\\package-lock.json",
+      "sha256": "05c91e9bd7ccee1ee3074eaaac97039e54755cebd248d28ca42edd1fdb7b7f38",
+      "bytes": 237237
+    },
+    {
+      "file": "Source\\package.json",
+      "sha256": "71ae4d0bcb3f6b456b61a8ee3f1792b40daa7c197c6dc773721378379c03a8f0",
+      "bytes": 2412
+    },
+    {
+      "file": "Source\\product.json",
+      "sha256": "f7ed99dfa7297e239e26488439beaf7ee56aed49a8c7757dacdb904a3c20e2f9",
+      "bytes": 386
+    },
+    {
+      "file": "Source\\public\\assets\\journal-logo.png",
+      "sha256": "8c582562ff96926bcdbe16a54fc8023d2108872a8da88e0b632bc73a8d0d41d6",
+      "bytes": 403010
+    },
+    {
+      "file": "Source\\public\\assets\\ty-logo.png",
+      "sha256": "8c582562ff96926bcdbe16a54fc8023d2108872a8da88e0b632bc73a8d0d41d6",
+      "bytes": 403010
+    },
+    {
+      "file": "Source\\research\\FEATURE_COVERAGE.md",
+      "sha256": "b0455bb39aa28c515126f9b1dd306e26fa94cb85646a07bb36010446f970a25a",
+      "bytes": 3909
+    },
+    {
+      "file": "Source\\research\\GOOGLE-SIGN-IN-INTEGRATION.md",
+      "sha256": "35c9fe764bbd2094ed756292567a6f4743f089920d821a7cee9664c67947a8eb",
+      "bytes": 5142
+    },
+    {
+      "file": "Source\\research\\google-auth-domains.json",
+      "sha256": "b440815a83f2726bfda347b37983bf36c8c12670969f5221c4581b04745a61fd",
+      "bytes": 5372
+    },
+    {
+      "file": "Source\\scripts\\build-mcp.mjs",
+      "sha256": "8bb36bdc5a6aa3553fabd124583968ff283c4e9f17974b0920819559e74cfd94",
+      "bytes": 1854
+    },
+    {
+      "file": "Source\\scripts\\serve-check.mjs",
+      "sha256": "aa7d3710cc9af1c1744a21938deb81c433d9f5353a765556eb5a49445233eacf",
+      "bytes": 858
+    },
+    {
+      "file": "Source\\scripts\\ui-qa-preview.mjs",
+      "sha256": "47d28980c1ec3ee389072477e294d96a83b0600e2d972ae50e81725493aa4596",
+      "bytes": 2963
+    },
+    {
+      "file": "Source\\scripts\\update-google-auth-hosts.mjs",
+      "sha256": "66e6084b877eb1b6743393e4b9b274ce2f910e59bbd195c3ae009d61bd33a33c",
+      "bytes": 1386
+    },
+    {
+      "file": "Source\\scripts\\verify-installer-payload.mjs",
+      "sha256": "5d3abe190d152db78df773070669e493c2c5f06458c900818a76253574ca56d5",
+      "bytes": 1467
+    },
+    {
+      "file": "Source\\scripts\\verify-packaged-mcp.mjs",
+      "sha256": "06483d20f52b19d050e90526ede97ef5a0cdbf3e396df59340119433f431782f",
+      "bytes": 1937
+    },
+    {
+      "file": "Source\\scripts\\verify-release.mjs",
+      "sha256": "399c805c8ae3c9dd108e181388b224cd65c853c768052fc43f0eb278b3e00f69",
+      "bytes": 3021
+    },
+    {
+      "file": "Source\\shared\\analytics.mjs",
+      "sha256": "1d65dd04ef501a3d3eaafeacb23f133b48f63ea28a8f5e21f595737de3ef7f33",
+      "bytes": 7747
+    },
+    {
+      "file": "Source\\shared\\backtest.mjs",
+      "sha256": "943248f61914a58a42e98cc73a1019858bcf47e1b34331882de6d429e019479c",
+      "bytes": 1834
+    },
+    {
+      "file": "Source\\shared\\coach-analysis.mjs",
+      "sha256": "bbe9ba139d8590582e49131f76e27a5238d6f80f871e4ce1e4d432febe0d5277",
+      "bytes": 2615
+    },
+    {
+      "file": "Source\\shared\\coach-languages.mjs",
+      "sha256": "dfe30359c946d92f7538fef1026003083e282535f60ae44c6dde1a517460a1f1",
+      "bytes": 15127
+    },
+    {
+      "file": "Source\\shared\\coach.mjs",
+      "sha256": "89ae95bf0f5ce238150bedcd2704dbae21931e24182bf4e7fc93555a32d89703",
+      "bytes": 13577
+    },
+    {
+      "file": "Source\\shared\\connection.mjs",
+      "sha256": "a6f79c40d464d6755795c5b5ea18eccccf6a9b52dde308947fdedbc1d811405f",
+      "bytes": 399
+    },
+    {
+      "file": "Source\\shared\\demo.mjs",
+      "sha256": "508ae15bd34f5b32e9ca7f9e9c174b5fa964c941e392cc4521b078c7acca6f56",
+      "bytes": 4686
+    },
+    {
+      "file": "Source\\shared\\import.mjs",
+      "sha256": "89a67d2cd60b900a3cfa28da96dd98a0dc0c6b6c7985f15a5ec975970eccdcf8",
+      "bytes": 4849
+    },
+    {
+      "file": "Source\\shared\\model.mjs",
+      "sha256": "7111b582deda88fdbcd2e98e8698b0b2f794b50d5c7c5b3a380b5a169e3ba265",
+      "bytes": 8683
+    },
+    {
+      "file": "Source\\shared\\records.mjs",
+      "sha256": "8265af1580817fee982166b45deeb38b9a3c9916ee3e1471195c74c3e7591faa",
+      "bytes": 1023
+    },
+    {
+      "file": "Source\\shared\\tradersyard.mjs",
+      "sha256": "8a4314cedd46d9b93c1407d6a32b63295586f94df34719e4494122c2d5e82af6",
+      "bytes": 11077
+    },
+    {
+      "file": "Source\\src\\JournalApp.jsx",
+      "sha256": "86cd941573073bc7c2d7ceb9ec32cdff179a5fe75153cbc21595c7a71dc00e4b",
+      "bytes": 17947
+    },
+    {
+      "file": "Source\\src\\adapter.d.ts",
+      "sha256": "a6b58fb9b5507628c217ffe4f80854ef5cbece5d2333f14268d0e510c2abe164",
+      "bytes": 1721
+    },
+    {
+      "file": "Source\\src\\adapters\\standalone.mjs",
+      "sha256": "93b6b1a75c307dcf4db482bd12c0e094f56a429e022ff1db21069aac838f70d0",
+      "bytes": 1795
+    },
+    {
+      "file": "Source\\src\\assets\\fonts\\NOTICE.md",
+      "sha256": "c7b43391aeb83b3910e483d177eb896f3daf2a9591d98d13e8baf15f7fdb36eb",
+      "bytes": 425
+    },
+    {
+      "file": "Source\\src\\assets\\fonts\\Satoshi-400.woff2",
+      "sha256": "50dca57f0b77918e0fb7dac998c3f5ef6b0c2a29657da97658a04f98ac532fc5",
+      "bytes": 25516
+    },
+    {
+      "file": "Source\\src\\assets\\fonts\\Satoshi-500.woff2",
+      "sha256": "af02a72246f53ad49c44a591921edbd39ec8258a03d8cc2e0532aa1e497e85b4",
+      "bytes": 25596
+    },
+    {
+      "file": "Source\\src\\assets\\fonts\\Satoshi-700.woff2",
+      "sha256": "353a7fbfb4475f0c31470a7449226006cb64211c71055ca9db860a8acdaa9f68",
+      "bytes": 25328
+    },
+    {
+      "file": "Source\\src\\components\\AccountPicker.jsx",
+      "sha256": "647b1ac00827f0c25ea9d3da9ea8ffd7f69eaa03a93fa283cc3e8a7648be5eba",
+      "bytes": 4567
+    },
+    {
+      "file": "Source\\src\\components\\ImportModal.jsx",
+      "sha256": "37842362bf973d93cb9230795ffafa004ab2e88458b193d2ade282a0eb5aabdf",
+      "bytes": 4795
+    },
+    {
+      "file": "Source\\src\\components\\ManualAccountEditor.jsx",
+      "sha256": "4d30aae2895d853dad0c0322b0eb27fa14ebf8556e7c9c10f21b8098a0a57350",
+      "bytes": 3796
+    },
+    {
+      "file": "Source\\src\\components\\Profile.jsx",
+      "sha256": "1f5114fd80c52eb3f18d43e93aaa8245d10dcd93fb58dd64c2b7afff1fc516da",
+      "bytes": 1996
+    },
+    {
+      "file": "Source\\src\\components\\TradeEditor.jsx",
+      "sha256": "023c9878d1936abae8193e3c9dc2a53a1950daa38d7dbd2ad1167cf6141a13dd",
+      "bytes": 9288
+    },
+    {
+      "file": "Source\\src\\components\\TradeTable.jsx",
+      "sha256": "369f58ac3c21fa5f39a8b1f2b4be19d96c54cf87faac8b38ca00f0003a561af2",
+      "bytes": 3015
+    },
+    {
+      "file": "Source\\src\\components\\charts.jsx",
+      "sha256": "a5c0747d08baac451a0761e4896219175652d46d788f0db4a00d5e97aefc8e4d",
+      "bytes": 5087
+    },
+    {
+      "file": "Source\\src\\components\\ui.jsx",
+      "sha256": "7a4928d5660411332828d8b864357e61dfbb075fb2b4af53e709d8c5cb7404f7",
+      "bytes": 3204
+    },
+    {
+      "file": "Source\\src\\embed.jsx",
+      "sha256": "20aa9c85761c32139df8ab58a7e60c0d8061b5548272eefb7aa03dcae12c921f",
+      "bytes": 796
+    },
+    {
+      "file": "Source\\src\\hooks\\useJournal.js",
+      "sha256": "34f8555d658ce986a00303eb28d8e5ef051373d9d0eb6cb730e6df0e15695f00",
+      "bytes": 2130
+    },
+    {
+      "file": "Source\\src\\main.jsx",
+      "sha256": "c27c6b3bf890b242aba6351075ec51292c5a01d71ac1339d887ec6be528ddbc5",
+      "bytes": 441
+    },
+    {
+      "file": "Source\\src\\pages\\Accounts.jsx",
+      "sha256": "d6f868842503d15f5e63ef971860a66a414e338d677f006aa1e08f931cb7388c",
+      "bytes": 9482
+    },
+    {
+      "file": "Source\\src\\pages\\Calendar.jsx",
+      "sha256": "e267ad642f652cde21c77c189436b847576b2f5d1ba6bc58bbe408f612dd26b2",
+      "bytes": 3877
+    },
+    {
+      "file": "Source\\src\\pages\\Coach.jsx",
+      "sha256": "e99ee990a359b983b7fd926359942745384ea0fbdf05ec40626cf462818831a3",
+      "bytes": 3726
+    },
+    {
+      "file": "Source\\src\\pages\\Dashboard.jsx",
+      "sha256": "d3be8bca0fe0b7acadc122f21af8b0bc8bf6be15d6245799fd0247a2222fa126",
+      "bytes": 7105
+    },
+    {
+      "file": "Source\\src\\pages\\Notebook.jsx",
+      "sha256": "914e3d8725ff7322283107839716ca9cf6ec4e5bc5052071960d71292fe38237",
+      "bytes": 4221
+    },
+    {
+      "file": "Source\\src\\pages\\Partners.jsx",
+      "sha256": "573d7ce8b0e1122b252ebe57b68755aa4bb6f536e03aed27fe0f6d04bea0d881",
+      "bytes": 2554
+    },
+    {
+      "file": "Source\\src\\pages\\Progress.jsx",
+      "sha256": "eaecfb4cef65d64dd83f76154a4c246ce2bd69d5ef7f01dfe1df0736a6e5b897",
+      "bytes": 2648
+    },
+    {
+      "file": "Source\\src\\pages\\Replay.jsx",
+      "sha256": "b21ffe478051e75540cbd6d9d12c371308c4f716550c0ef18eddfa1e72ec634c",
+      "bytes": 13526
+    },
+    {
+      "file": "Source\\src\\pages\\Reports.jsx",
+      "sha256": "5208d167eb4f488380c001b4a58a19d9838db7637775100ce7d261590538a685",
+      "bytes": 4764
+    },
+    {
+      "file": "Source\\src\\pages\\Settings.jsx",
+      "sha256": "cd6324788bb6da036a24d9a291289d27324c7fe6e51a2e13e0df37f06e2fae3e",
+      "bytes": 5581
+    },
+    {
+      "file": "Source\\src\\pages\\Strategies.jsx",
+      "sha256": "126d0535ef1f9df78b49dc29bd7b6e40181d868c99aac0852ae2859c45d463e0",
+      "bytes": 4984
+    },
+    {
+      "file": "Source\\src\\pages\\TradeJournal.jsx",
+      "sha256": "28546757f721578c2d48b3465c56782af1811b5596ad0ee3f6f0acde23010a93",
+      "bytes": 2322
+    },
+    {
+      "file": "Source\\src\\product.js",
+      "sha256": "b04e4fb66a668d28ab492d560a4306b1fc1c66e4171365dfa096a885c28e6db9",
+      "bytes": 136
+    },
+    {
+      "file": "Source\\src\\standalone.css",
+      "sha256": "b2f5fde21bdd2d111f812714a8ae20cd2d9899a9eda826ee604ce68c35ba5c2f",
+      "bytes": 81
+    },
+    {
+      "file": "Source\\src\\style.css",
+      "sha256": "54366cfc2f7cd775683f9516d8de7fd550cac0fd246a55d0a17934d982ca562b",
+      "bytes": 54159
+    },
+    {
+      "file": "Source\\tests\\connection-lifecycle.test.mjs",
+      "sha256": "ef4a268b4537aeff404a9fdf050e4e6af2b990f0410cd5ea717cfe125c173cf1",
+      "bytes": 12683
+    },
+    {
+      "file": "Source\\tests\\core.test.mjs",
+      "sha256": "37c1e65fc0db2d3c82081ca51c00db7864445b39a4cb74f3027190f827ef7498",
+      "bytes": 6612
+    },
+    {
+      "file": "Source\\tests\\incremental-sync.test.mjs",
+      "sha256": "27f55d89676178b3e998352ed232cdb41a3e655c2e921104d77d4c2f4a48b81b",
+      "bytes": 7949
+    },
+    {
+      "file": "Source\\tests\\journal-v02.test.mjs",
+      "sha256": "4acf8118818a222e1d68e7e584577826c0b583ccfd6cd15bc17e704c7c3482f0",
+      "bytes": 6548
+    },
+    {
+      "file": "Source\\tests\\persistence.test.mjs",
+      "sha256": "d92e0ef24069cc7d31e5a5929c8a2e36aefc850097c1f407f47f0dac58848426",
+      "bytes": 2557
+    },
+    {
+      "file": "Source\\tests\\provider-regressions.test.mjs",
+      "sha256": "2cbe1442c00514e8a714194e17f24c2a518f305472b5c8cd8f1a5a4706757f2b",
+      "bytes": 3920
+    },
+    {
+      "file": "Source\\tests\\release-v022.test.mjs",
+      "sha256": "143d6d95cf5ff9d8898cd8ee33d5a27d31280e4ebf8c995f5d4c89be42a5f604",
+      "bytes": 2153
+    },
+    {
+      "file": "Source\\vite.config.js",
+      "sha256": "0330ef515fb7a43a05f0cdc1bb606e90a0ceb6055eeba05d5d102487f1b977ba",
+      "bytes": 349
+    },
+    {
+      "file": "Source\\vite.embed.config.js",
+      "sha256": "ef025eb936848a1ba2288712e2e56b66f49d7bb5eb46445257bcc880c5e33147",
+      "bytes": 417
+    },
+    {
+      "file": "Verification\\TEAM-TESTING.md",
+      "sha256": "8c2af3ce1385a767788f9cb871cd2c385305c578e9f7506a2192bcb930edd194",
+      "bytes": 3450
+    },
+    {
+      "file": "Verification\\VERIFICATION-v0.3.1.md",
+      "sha256": "65255a9f5a4ad54a3b457a6739ec72d9b8aa39cc8596ee967858f1ced30a47c7",
+      "bytes": 5388
+    },
+    {
+      "file": "Verification\\delivery-tradersyard-journal-v0.3.1.json",
+      "sha256": "67b48fd30b1e9568ab1d9cd5923865090c4be7cb7f1ce12405136cf1f872cb0e",
+      "bytes": 12268
+    },
+    {
+      "file": "Verification\\installer-payload-ty-v031.json",
+      "sha256": "83907694599bc7547bf3675e65eb7841aec63b4b1ab152b908c0e8f783a6aacc",
+      "bytes": 251
+    },
+    {
+      "file": "Verification\\release-v0.3.1.json",
+      "sha256": "6d255368b888f69d4bbc3a49c8be6df1425715f05f1b4781999ac9b4a5185b25",
+      "bytes": 487
+    }
+  ]
+}

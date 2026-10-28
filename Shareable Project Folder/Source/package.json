@@ -1,0 +1,90 @@
+{
+  "name": "tradersyard-journal",
+  "version": "0.3.1",
+  "private": true,
+  "description": "Local trading journal, analytics and TradersYard account companion",
+  "author": "TradersYard Journal",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "start": "electron .",
+    "test": "node --test tests/*.test.mjs",
+    "dist": "npm run build && npm run build:mcp && electron-builder --win nsis portable",
+    "mcp": "node mcp/server.mjs",
+    "build:embed": "vite build --config vite.embed.config.js",
+    "build:mcp": "node scripts/build-mcp.mjs"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.0",
+    "electron": "^42.0.0",
+    "electron-builder": "^26.0.12",
+    "png-to-ico": "^3.0.1",
+    "vite": "^7.3.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "recharts": "^3.0.0",
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "papaparse": "^5.5.3",
+    "zod": "^4.6.7"
+  },
+  "build": {
+    "appId": "com.tradersyard.journal",
+    "productName": "TradersYard Journal",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "shared/model.mjs",
+      "shared/tradersyard.mjs",
+      "shared/connection.mjs",
+      "THIRD_PARTY_NOTICES.md",
+      "package.json",
+      "build/icon.ico",
+      "build/DEPENDENCY_LICENSES.txt",
+      "product.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": true
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "deleteAppDataOnUninstall": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": false,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "createStartMenuShortcut": true,
+      "include": "build/installer.nsh",
+      "runAfterFinish": true
+    },
+    "portable": {
+      "artifactName": "TradersYard-Journal-${version}-portable.exe"
+    },
+    "forceCodeSigning": false,
+    "extraFiles": [
+      {
+        "from": "build/APP-GUIDE.txt",
+        "to": "READ ME.txt"
+      }
+    ],
+    "extraResources": [
+      {
+        "from": "dist-mcp/server.cjs",
+        "to": "mcp/server.cjs"
+      }
+    ]
+  }
+}

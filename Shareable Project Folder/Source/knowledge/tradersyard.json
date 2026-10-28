@@ -1,0 +1,122 @@
+{
+  "version": 2,
+  "verifiedAt": "2026-10-27",
+  "articles": [
+    {
+      "id": "company",
+      "topics": [
+        "history",
+        "vision"
+      ],
+      "title": "History and mission",
+      "url": "https://tradersyard.com/en/about",
+      "text": "TradersYard’s timeline: 2020 foundation; 2021–22 community growth; 2023 Andromeda backing; 2024 prop-firm launch; 2025 expansion. The Austrian firm emphasises fair conditions and trader development."
+    },
+    {
+      "id": "team",
+      "topics": [
+        "team"
+      ],
+      "title": "TradersYard team",
+      "url": "https://tradersyard.com/en/about",
+      "text": "Published team: Manuel Sonnleithner (CEO/co-founder); Ingmar Mattus and Antonis Dessipris (strategic backing); Sagar Mule (product); Pawel Brzezinski (development); Andrew Harasivka (brokerage); Alex Svyustun (QA); Vitalij Stepchuk (trading platform); Ismayil Mirzayev (design/development); Denis Katjuk and Victor Popivchak (infrastructure/DevOps); Ulrich Emile Franzsen (risk/compliance); Flo Alarape (marketing); Piotr Siusta (support); Ethan Jakubow (social media); Sultan Haider (QA/support); Roshan (community); Kartik (support/moderation); Mersy, Jesse and Mayank (moderation)."
+    },
+    {
+      "id": "one-step",
+      "topics": [
+        "rules",
+        "drawdown"
+      ],
+      "plan": "1-Step",
+      "title": "1-Step evaluation",
+      "url": "https://help.tradersyard.com/en/articles/16311824-evaluation-rules-for-1-step-accounts",
+      "text": "The 1-Step evaluation requires its profit target, profitable days, consistency and risk conditions to be met. Daily drawdown includes open P&L and resets at 00:00 UTC. EoD drawdown can trail upward and eventually lock. The public article contains ambiguous wording about numeric limits and profitable days; use the individual account dashboard for exact thresholds."
+    },
+    {
+      "id": "one-trading",
+      "topics": [
+        "news",
+        "martingale",
+        "prohibited",
+        "overnight",
+        "rules"
+      ],
+      "plan": "1-Step",
+      "title": "1-Step trading conditions",
+      "url": "https://help.tradersyard.com/en/articles/16311857-1-step-account-trading-rules",
+      "text": "The 1-Step guide prohibits copy trading, cross-account hedging, latency exploitation, gambling and VPN/VPS use. It restricts martingale/grid methods, limits margin on an individual trade to 70% of balance, and requires a trade within each 30-day period. After a losing streak, a new position cannot exceed twice the largest losing position's notional size. News restrictions cover 10 minutes before through 5 minutes after high-impact events. Overnight holding is allowed."
+    },
+    {
+      "id": "two-step",
+      "topics": [
+        "rules",
+        "drawdown"
+      ],
+      "plan": "2-Step",
+      "title": "2-Step evaluation",
+      "url": "https://help.tradersyard.com/en/articles/16312061-phase-1-2-rules-for-2-step-account",
+      "text": "The current 2-Step guide lists a 9% target in Phase 1 and 6% in Phase 2, six profitable days, 5% daily drawdown and 10% static maximum drawdown. Older or configured accounts can differ; the synced account thresholds take priority."
+    },
+    {
+      "id": "two-consistency",
+      "topics": [
+        "consistency",
+        "days"
+      ],
+      "plan": "2-Step",
+      "title": "2-Step profitable days and consistency",
+      "url": "https://help.tradersyard.com/en/articles/16312083-minimum-profitable-days-consistency-for-2-step-accounts",
+      "text": "The current 2-Step guide requires six profitable days and states that this plan has no consistency ratio requirement. Do not assume the 40% ratio used by other products applies to a 2-Step account."
+    },
+    {
+      "id": "futures-drawdown",
+      "topics": [
+        "drawdown",
+        "rules"
+      ],
+      "plan": "Futures",
+      "title": "Futures EoD drawdown",
+      "url": "https://help.tradersyard.com/en/articles/17254544-futures-eod-trailing-maximum-drawdown",
+      "text": "Futures Standard uses 3% EoD trailing drawdown and Premium 4%. The floor updates at 17:00 New York time when the reference high increases; it never falls. It stops trailing at the initial balance. After a payout, the next cycle uses the initial-balance floor. This is an account floor, not the journal's closed-trade drawdown metric."
+    },
+    {
+      "id": "futures-trading",
+      "topics": [
+        "news",
+        "overnight",
+        "prohibited",
+        "scalping",
+        "rules"
+      ],
+      "plan": "Futures",
+      "title": "Futures trading conditions",
+      "url": "https://help.tradersyard.com/en/articles/17255497-futures-trading-rules-prohibited-practices",
+      "text": "Futures positions must close before the 17:00 New York reset. News restrictions run from 10 minutes before to 5 minutes after high-impact releases, including system execution of pending orders. Profit from trades under ten seconds is capped at 30% of total closed profit; excess is deducted. The guide also prohibits latency/arbitrage exploitation, cross-account hedging, unauthorised copying, third-party management, gambling-like churning and VPN/VPS use."
+    },
+    {
+      "id": "futures-rewards",
+      "topics": [
+        "payout",
+        "days",
+        "consistency",
+        "allocation"
+      ],
+      "plan": "Futures",
+      "title": "Futures reward eligibility",
+      "url": "https://help.tradersyard.com/en/articles/17256523-futures-funded-account-reward-eligibility",
+      "text": "Funded Futures has no evaluation profit target. Both plans require at least 1% cycle profit and a minimum payout of 1% of initial balance; at most 50% of available profit can be used, subject to caps and split. Standard requires five profitable days with daily closed profit at least 0.4% of initial balance and has no funded consistency ratio. Premium has no minimum profitable days but requires consistency below 40%. Allocation permits five funded accounts, at most two Premium. The guide lists a $100,000 combined funded cap for Malaysia, Pakistan, Indonesia and India; never infer a user's nationality. Eligibility does not guarantee approval."
+    },
+    {
+      "id": "futures-review",
+      "topics": [
+        "payout",
+        "review-status",
+        "blocked"
+      ],
+      "plan": "Futures",
+      "title": "Futures rewards and risk review",
+      "url": "https://help.tradersyard.com/en/articles/17263752-reward-frequency-review-cooldown",
+      "text": "The Futures guide permits a first reward request after ten days, then ten-day intervals subject to eligibility. Risk review can examine history, patterns, violations and account churning. The team may impose a 30-day trading suspension. Eligible funded accounts unblock on calendar day 30. Only TradersYard can confirm why an individual account was blocked or whether it is eligible."
+    }
+  ]
+}

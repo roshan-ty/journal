@@ -1,0 +1,9 @@
+**/node_modules/
+**/.local/
+**/.env
+**/.env.*
+**/*.log
+**/journal.sqlite*
+**/Cookies
+**/Login Data
+**/release/

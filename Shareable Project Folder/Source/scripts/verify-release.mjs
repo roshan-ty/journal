@@ -1,0 +1,27 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import path from 'node:path';
+import {listPackage,extractFile} from '@electron/asar';
+const archive=path.resolve('release/win-unpacked/resources/app.asar');
+const readPackaged=name=>extractFile(archive,path.normalize(name));
+const entries=listPackage(archive);
+const forbidden=entries.filter(p=>/(journal\.sqlite|\/Cookies$|\\Cookies$|Login Data|research[\\/]artifacts|[\\/]\.local[\\/]|[\\/]\.env$)/i.test(p));
+if(forbidden.length)throw Error('Private development files in package: '+forbidden.join(', '));
+const files=['product.json','dist/index.html','build/DEPENDENCY_LICENSES.txt','THIRD_PARTY_NOTICES.md','shared/model.mjs','shared/tradersyard.mjs','shared/connection.mjs',...fs.readdirSync('electron').filter(name=>name.endsWith('.cjs')).map(name=>'electron/'+name)];
+const unnecessary=entries.filter(p=>/^[/\\](src|tests|scripts|tools|research|examples|\.local)[/\\]/.test(p) || /^[/\\]node_modules[/\\](react|react-dom|recharts|lucide-react|vite|electron-builder|rea-agents)[/\\]/.test(p));
+if(unnecessary.length)throw Error('Development or duplicate frontend files in release: '+unnecessary.slice(0,5).join(', '));
+if(entries.some(p=>/^[/\\]node_modules[/\\]/.test(p)))throw Error('Unbundled dependency files in the release.');
+if(!fs.readFileSync('release/win-unpacked/resources/mcp/server.cjs').equals(fs.readFileSync('dist-mcp/server.cjs')))throw Error('Packaged MCP differs from verified bundle.');
+for(const name of files)if(!readPackaged(name).equals(fs.readFileSync(name)))throw Error('Packaged source mismatch: '+name);
+// electron-builder intentionally strips development metadata from package.json.
+const packed=JSON.parse(extractFile(archive,'package.json'));
+const source=JSON.parse(fs.readFileSync('package.json'));
+for(const key of ['name','version','main'])if(packed[key]!==source[key])throw Error('Package metadata mismatch: '+key);
+const html=fs.readFileSync('dist/index.html','utf8');
+for(const asset of [...html.matchAll(/(?:src|href)="\.\/(assets\/[^\"]+)"/g)].map(m=>'dist/'+m[1]))if(!readPackaged(asset).equals(fs.readFileSync(asset)))throw Error('UI bundle mismatch: '+asset);
+const output=fs.readdirSync('release').filter(name=>name.includes(source.version)&&(name.endsWith('.exe')||name.endsWith('-embed.zip'))).map(name=>{const data=fs.readFileSync('release/'+name);return {name,bytes:data.length,sha256:crypto.createHash('sha256').update(data).digest('hex')};});
+if(!output.some(o=>o.name.includes('Setup')) || !output.some(o=>o.name.includes('portable'))) throw Error('Installer or portable artifact is missing.');
+fs.writeFileSync(`release/SHA256SUMS-${source.version}.txt`,output.map(o=>`${o.sha256}  ${o.name}`).join('\n')+'\n');
+const report={version:source.version,verifiedAt:new Date().toISOString(),matchingFiles:files.length,privateFiles:forbidden.length,artifacts:output};
+fs.writeFileSync(`research/release-v${source.version}.json`,JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify(report,null,2));

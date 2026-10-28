@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-embed/
+release/
+tools/
+.local/
+*.log
+.env*
+!.env.example
+research/artifacts/

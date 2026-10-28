@@ -1,0 +1,45 @@
+TradersYard Journal
+
+OPEN THE APP
+Open TradersYard Journal.exe, or use the Start menu / desktop shortcut created by setup.
+Keep this executable with its adjacent files and folders. No separate Node.js,
+Python, browser, database server, or paid AI subscription is required.
+
+APPLICATION FILES
+TradersYard Journal.exe  - application launcher
+resources/app.asar      - journal interface, analytics, coach and account connector
+resources/mcp/          - bundled optional MCP service
+locales/                - Chromium language resources
+Adjacent DLL, PAK, BIN and JSON files are required Electron/Chromium runtime files.
+License files are included because the runtime contains third-party software.
+Setup also adds an uninstaller and a Start menu entry.
+
+YOUR JOURNAL
+Choose Connect Account to sign in on TradersYard's official website, or Create
+Profile to add accounts and trades manually. Internet is required for account
+connection and sync. Manual journaling and the built-in coach work offline.
+The coach provides calculated performance analysis and a curated knowledge base;
+it is not a general-purpose trained language model.
+
+SIGN-IN
+The sign-in window closes after the account API confirms the connection.
+The Sign-in menu provides Back, Reload, Restart and Close controls.
+Google and other providers control which browsers and accounts they accept.
+If a provider rejects the embedded browser, use another sign-in method offered
+by TradersYard. A supported external-browser handoff requires TradersYard integration.
+
+DATA LOCATION
+Each Windows user has separate data. Updates do not overwrite it.
+Journal: %APPDATA%\TradersYard Journal
+Official sign-in session: %APPDATA%\tradersyard-journal
+Export a journal backup from Settings before moving to another computer.
+Do not share your data or sign-in folders with your team.
+
+INSTALLATION
+Setup defaults to C:\Program Files\TradersYard Journal on standard Windows setups.
+You may choose another directory and optionally create a desktop shortcut.
+To pin the app to the taskbar, open it, right-click its taskbar icon and choose
+Pin to taskbar. Setup offers these instructions on its final screen.
+
+This team testing build is unsigned. Its publisher cannot be verified by a
+code-signing certificate. Check the release checksum before distributing it.

@@ -1,0 +1,14 @@
+{
+  "id": "tradersyard-journal",
+  "appId": "com.tradersyard.journal",
+  "name": "TradersYard Journal",
+  "shortName": "TradersYard",
+  "initials": "TY",
+  "coachName": "Yard Coach",
+  "singlePage": true,
+  "partners": false,
+  "dataDirectory": "TradersYard Journal",
+  "sessionDirectory": "tradersyard-journal",
+  "dataEnvironment": "TY_JOURNAL_DATA_DIR",
+  "browserKey": "ty-state"
+}

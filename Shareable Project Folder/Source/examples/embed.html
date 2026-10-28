@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Journal integration check</title><link rel="stylesheet" href="./tradersyard-journal.css"><style>body{margin:0;font:16px Arial;background:#eef0f7;color:#171717}header{padding:18px}#journal{margin:16px;border-radius:16px;overflow:hidden}header button{padding:8px}</style></head><body><header>Dashboard integration check <button id="theme">Switch theme</button><button id="user">Switch user</button></header><div id="journal"></div><script type="module">
+import {mountJournal} from './tradersyard-journal.js';
+// Illustrates host-owned, per-user persistence. Production authentication belongs on the server.
+const empty=()=>({schemaVersion:1,accounts:[],trades:[],notes:[],playbooks:[],habits:[],habitLog:{},candles:[],backtests:[],settings:{brand:'TradersYard Journal',theme:'dark',timezone:'UTC',currency:'USD',coachKnowledge:''},sync:{status:'disconnected'}});
+const records=new Map();
+function adapterFor(id){return {async load(){return structuredClone(records.get(id)||{state:empty(),revision:0});},async save(state,revision){const old=records.get(id);if((old?.revision||0)!==revision)throw Error('Revision conflict');const next={state,revision:revision+1};records.set(id,structuredClone(next));return next;}};}
+let id='integration-a',theme='dark';const app=mountJournal(document.querySelector('#journal'),{adapter:adapterFor(id),identity:{id,name:'Integration A'},theme});
+document.querySelector('#theme').onclick=()=>{theme=theme==='dark'?'light':'dark';app.update({theme});};
+document.querySelector('#user').onclick=()=>{id=id==='integration-a'?'integration-b':'integration-a';app.update({identity:{id,name:id},adapter:adapterFor(id)});};
+</script></body></html>

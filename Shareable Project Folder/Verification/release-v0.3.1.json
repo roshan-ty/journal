@@ -1,0 +1,18 @@
+{
+  "version": "0.3.1",
+  "verifiedAt": "2026-10-28T17:42:42.648Z",
+  "matchingFiles": 14,
+  "privateFiles": 0,
+  "artifacts": [
+    {
+      "name": "TradersYard Journal Setup 0.3.1.exe",
+      "bytes": 113737399,
+      "sha256": "b1f34bf3c57c47207dfcd3d6deab527aa31132de6e128a8930dddb16c7b2b9c7"
+    },
+    {
+      "name": "TradersYard-Journal-0.3.1-portable.exe",
+      "bytes": 378784608,
+      "sha256": "4a53ee41873c292a6fb4e8407c3918cee8ec98c9e9caf4653a7e8f7272993618"
+    }
+  ]
+}
